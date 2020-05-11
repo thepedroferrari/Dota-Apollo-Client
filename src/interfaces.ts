@@ -639,3 +639,5 @@ type CountryCode =
   "YE" |
   "ZM" |
   "ZW";
+
+export type TParams = { id: string; };
