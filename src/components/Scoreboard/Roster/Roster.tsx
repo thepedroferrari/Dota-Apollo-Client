@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/client';
-import { IRoster } from '../../interfaces';
 import { GET_ROSTER_DATA } from './rosterQuery';
+import { Placement } from '../../../enums';
 
 interface Props {
   position: number;
@@ -36,11 +36,14 @@ function Roster({ position, rosterId }: Props) {
   if (loading) return <h1>Loading</h1>;
   if (error) return <h1>Error</h1>;
 
+  console.log(data);
+
+
   return (
     <div>
       <Link to={`/team/${rosterId}`} key={rosterId}>
         <li>
-          {position} {rosterId}
+          {Placement[position]} {rosterId}
         </li>
       </Link>
     </div>

@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client';
 import { IRoster } from '../../interfaces';
 import { GET_SCOREBOARD_DATA } from './scoreboardQuery';
 import { sortNumbersBy } from '../../utils/sort';
-import Roster from './Roster';
+import Roster from './Roster/Roster';
 
 function Scoreboard() {
   const { loading, error, data } = useQuery(GET_SCOREBOARD_DATA);
