@@ -639,3 +639,11 @@ type CountryCode =
   "YE" |
   "ZM" |
   "ZW";
+
+export interface ITeamMatches {
+  played: number;
+  won: number;
+  lost: number;
+}
+
+export type TQualified = 'Invited' | 'Qualified' | 'Not Qualified';

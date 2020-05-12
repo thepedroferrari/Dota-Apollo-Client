@@ -22,10 +22,6 @@ function Scoreboard() {
       <h1>SCOREBOARD</h1>
       {sortedRosters.map((roster: IRoster, i) => (
         <Roster rosterId={roster.id} position={i} key={roster.id} />
-        // <Link to={`/team/${roster.id}`} key={roster.id}>
-        //   <li>
-        //     <span>{i + 1}</span> | {roster.teams[0].name} | {roster.dpc_points}</li>
-        // </Link>
       ))}
     </div>
   );

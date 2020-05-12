@@ -6,6 +6,7 @@ export const GET_ROSTER_DATA = gql`
       scores
       seeding
       rosters {
+        id
         dpc_points
         teams {
           name

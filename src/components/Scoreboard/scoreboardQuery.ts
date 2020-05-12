@@ -6,7 +6,6 @@ export const GET_SCOREBOARD_DATA = gql`
       id
       dpc_points
       teams {
-        id
         name
       }
     }
