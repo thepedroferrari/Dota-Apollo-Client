@@ -1,37 +1,31 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { useQuery, gql } from '@apollo/client';
-import { IEvent } from '../../interfaces';
+import { Link } from "react-router-dom";
+import { useQuery } from '@apollo/client';
+import { IRoster } from '../../interfaces';
+import { GET_SCOREBOARD_DATA } from './scoreboardQuery';
+import { sortNumbersBy } from '../../utils/sort';
+import Roster from './Roster';
 
-const ALL_EVENTS = gql`
-  query allEvents {
-    events {
-      id
-      title
-      tournament_name
-      tier
-      pbp_status
-      tournament_name
-      substage_id
-      deleted_at
-      pbp_status
-      postponed_from
-      scores
-    }
-  }
-`;
+function Scoreboard() {
+  const { loading, error, data } = useQuery(GET_SCOREBOARD_DATA);
 
-
-function Scoreboard(props: {}) {
-  console.log(props);
-  const { loading, error, data } = useQuery(ALL_EVENTS);
   if (loading) return <h1>Loading</h1>;
   if (error) return <h1>Error</h1>;
+
+  const { rosters }: { rosters: IRoster[]; } = data;
+  const sortedRosters = sortNumbersBy('dpc_points', rosters, 'dsc');
+  if (typeof sortedRosters === 'undefined') return null;
+
   return (
+
     <div>
       <h1>SCOREBOARD</h1>
-      {data.events.map((event: IEvent) => (
-        <p key={event.id}>{event.title}</p>
+      {sortedRosters.map((roster: IRoster, i) => (
+        <Roster rosterId={roster.id} position={i} key={roster.id} />
+        // <Link to={`/team/${roster.id}`} key={roster.id}>
+        //   <li>
+        //     <span>{i + 1}</span> | {roster.teams[0].name} | {roster.dpc_points}</li>
+        // </Link>
       ))}
     </div>
   );

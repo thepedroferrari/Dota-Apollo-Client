@@ -1,5 +1,5 @@
 export interface IEvent {
-  id: number;
+  id: string;
   title: string;
   start: string;
   end: string | null;
@@ -78,7 +78,7 @@ type offset = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
   120 | 121 | 122 | 123 | 124 | 125 | 126 | 127 | 128;
 
 export interface IRoster {
-  id: number;
+  id: string;
   dpc_points: number;
   teams: ITeam[];
   players: IPlayer[];
@@ -87,7 +87,7 @@ export interface IRoster {
 export interface ITeam {
   name: string;
   deleted_at: string | null;
-  id: number;
+  id: string;
   short_name: string;
   images: ITeamImages;
   active: boolean;
@@ -135,7 +135,7 @@ type SocialMediaAccountSlug = "facebook" | "twitch" | "twitter";
 export interface IPlayer {
   nick_name: string;
   deleted_at: string | null;
-  id: number;
+  id: string;
   active: boolean;
   first_name: string | null;
   last_name: string | null;
@@ -639,5 +639,3 @@ type CountryCode =
   "YE" |
   "ZM" |
   "ZW";
-
-export type TParams = { id: string; };

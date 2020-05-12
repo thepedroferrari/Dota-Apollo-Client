@@ -1,11 +1,15 @@
 import { gql } from '@apollo/client';
 
 const TEAM_QUERY = gql`
-  query Team($id: Int!) {
-    team(id: $id) {
-      name
-      images {
-        default
+  query Team($rosterId: Int!) {
+    roster(id: $rosterId) {
+      dpc_points
+      teams {
+        id
+        name
+        images {
+          default
+        }
       }
     }
   }

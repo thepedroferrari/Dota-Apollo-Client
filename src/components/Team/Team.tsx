@@ -3,26 +3,33 @@ import { Link, RouteChildrenProps } from "react-router-dom";
 import { useQuery } from '@apollo/client';
 
 import TEAM_QUERY from './teamQuery';
-import { ITeam, TParams } from '../../interfaces';
+import { ITeam } from '../../interfaces';
 
-const Team = ({ match }: RouteChildrenProps<TParams>) => {
-  const teamID = Number(match?.params.id);
+interface TeamParams {
+  id: string;
+  rosterId: string;
+}
 
-  console.log({ teamID });
+const Team = ({ match }: RouteChildrenProps<TeamParams>) => {
+  const rosterId = Number(match?.params.rosterId);
+
   const { loading, error, data } = useQuery(TEAM_QUERY, {
     variables: {
-      id: teamID
+      rosterId
     }
   });
+
+
+  console.log({ rosterId, data });
 
   if (loading) return <h1>Loading</h1>;
   if (error) { console.log(error); return <h1>Error</h1>; };
 
-  const { team }: { team: ITeam[]; } = data;
+  const team: ITeam = data.roster.teams[0];
   return (
     <div>
-      <h1>{team[0].name}</h1>
-      <img alt={`Logo for the dota2 team ${team[0].name}`} src={team[0].images.default} />
+      <h1>{team.name}</h1>
+      <img alt={`Logo for the dota2 team ${team.name}`} src={team.images.default} />
     </div>
   );
 };
