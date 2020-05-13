@@ -19,11 +19,8 @@ const Team = ({ match }: RouteChildrenProps<TeamParams>) => {
     }
   });
 
-
-  console.log({ rosterId, data });
-
   if (loading) return <h1>Loading</h1>;
-  if (error) { console.log(error); return <h1>Error</h1>; };
+  if (error) return <h1>Error</h1>;
 
   const team: ITeam = data.roster.teams[0];
   return (

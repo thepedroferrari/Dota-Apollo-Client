@@ -11,7 +11,6 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={Scoreboard} />
-        <Route exact path="/player/:id" component={Player} />
         <Route exact path="/players/" component={Players} />
         <Route exact path="/team/:rosterId" component={Team} />
         <Route exact path="/teams/" component={Teams} />

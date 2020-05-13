@@ -1,44 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Dota Pro Circuit Client
 
-## Available Scripts
+In this project I am interacting with an Apollo Server, currently hosted at Heroku (it turns itself off after 10 minutes of inactivity)
 
-In the project directory, you can run:
+## Connection to the API
+The goal of using Apollo server and Apollo client is to have an updated source of truth that is easy to access, simple to subscribe via websockets in the event we want to use a live API and has amazing caching tools. This includes very specific cache invalidation and subscription to data; In a real scenario we want to poll intermittently with queries, and make small, incremental changes to large objects.
+We also want these updates to have very low latency, traditional graphql usually takes half a second to respond but with the correct subscription setup we may achieve the same in about 40ms.
 
-### `yarn start`
+## Client
+The client is supposed to utilize the data but never mutate it. The choice for not choosing something as Redux or Context to store the data from the API is to not have to manage two states. Apollo makes a good choice for maintaining a single source of truth. There will be however places where we don't want the data to be exactly the same as it is in the API, but instead of passing the data to a component state and subscribing to the state changes we want functions that are directly hidrated by the data from GraphQL.
+You will find hooks that instead of performing queries they will require that the data is passed to them.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

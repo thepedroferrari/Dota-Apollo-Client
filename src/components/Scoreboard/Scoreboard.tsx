@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/client';
 import { IRoster } from '../../interfaces';
 import { GET_SCOREBOARD_DATA } from './scoreboardQuery';
 import { sortNumbersBy } from '../../utils/sort';
 import Roster from './Roster/Roster';
+import Player from '../Player';
+import Match from '../Match/Match';
 
 function Scoreboard() {
   const { loading, error, data } = useQuery(GET_SCOREBOARD_DATA);
@@ -20,8 +21,18 @@ function Scoreboard() {
 
     <div>
       <h1>SCOREBOARD</h1>
+
+      <Match rosterId={"44016"} eventId={189345} future />
       {sortedRosters.map((roster: IRoster, i) => (
-        <Roster rosterId={roster.id} position={i} key={roster.id} />
+
+        <Roster
+          dpc={roster.dpc_points}
+          key={roster.id}
+          name={roster.teams[0].name}
+          logo={roster.teams[0].images.thumbnail}
+          position={i}
+          rosterId={roster.id}
+        />
       ))}
     </div>
   );

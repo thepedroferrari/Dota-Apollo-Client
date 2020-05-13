@@ -1,16 +1,16 @@
 export interface IEvent {
   id: string;
   title: string;
-  start: string;
-  end: string | null;
+  start: number;
+  end: number | null;
   tier: number;
   bestOf: number;
   tournament_id: number;
   tournament_name: string;
   substage_id: number;
-  deleted_at: string | null;
+  deleted_at: number | null;
   pbp_status: PhbStatus;
-  postponed_from: string | null;
+  postponed_from: number | null;
   scores: IScores;
   chain: null; // TODO: Figure this one out
   forfeit: Forfeit;
@@ -41,7 +41,7 @@ interface IGameImages {
   rectangle: string;
 }
 
-interface IScores {
+export interface IScores {
   [key: string]: number;
 }
 
@@ -123,7 +123,7 @@ interface ICountryRegion {
 
 type CountryRegionId = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
-interface ISocialMediaAccount {
+export interface ISocialMediaAccount {
   name: SocialMediaAccountName;
   slug: SocialMediaAccountSlug;
   url: string;
@@ -137,8 +137,8 @@ export interface IPlayer {
   deleted_at: string | null;
   id: string;
   active: boolean;
-  first_name: string | null;
-  last_name: string | null;
+  first_name?: string | null;
+  last_name?: string | null;
   images: IPlayerImages;
   roles: IPlayerRole[];
   country: ICountry;
@@ -641,6 +641,8 @@ type CountryCode =
   "ZW";
 
 export interface ITeamMatches {
+  past: IEvent['id'][];
+  future: IEvent['id'][];
   played: number;
   won: number;
   lost: number;
