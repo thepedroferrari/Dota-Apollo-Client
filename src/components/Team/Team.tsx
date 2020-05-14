@@ -32,8 +32,6 @@ const Team = ({ match }: RouteChildrenProps<TeamParams>) => {
 
   const team: ITeam = teams[0];
 
-  // need another query (eventsbyroster) to get the event id of the prev/fut events to display bellow
-  // need to get player id/name to load the player card
   return (
     <div>
       <h1>{team.name}</h1>

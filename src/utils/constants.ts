@@ -1,4 +1,5 @@
 import { TI18N } from '../interfaces';
+
 // The international regulation
 export const DPC_TO_QUALIFY = 3690;
 export const NUMBER_OF_TEAMS_TO_QUALIFY = 12;

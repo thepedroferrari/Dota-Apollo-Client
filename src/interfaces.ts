@@ -166,6 +166,7 @@ export interface ITeamMatches {
 }
 
 export type TQualified = 'Invited' | 'Qualified' | 'Not Qualified';
+export type IPlayerRoleName = 'Hard Carry' | 'Mid' | 'Off-lane' | 'Support' | 'Hard Support';
 
 // missing 3 regions
 type CountryRegionShortName = "EA" | "EU" | "NA" | "OCE" | "SA" | "SEA" | "WA";

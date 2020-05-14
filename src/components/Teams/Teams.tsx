@@ -12,18 +12,18 @@ const Teams: React.FC = () => {
 
   const { teams }: { teams: ITeam[]; } = data;
   return (
-    <div>
+    <>
       <h1>ALL TEAMS</h1>
-      <ul>
+      <div className="grid">
         {teams.map(team => (
-          <li key={team.id}>
+          <div key={team.id}>
             <Link to={`/team/${team.id}`}>
               {team.name}
             </Link>
-          </li>
+          </div>
         ))}
-      </ul>
-    </div>
+      </div>
+    </>
   );
 };
 

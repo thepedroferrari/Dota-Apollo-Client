@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 import { GET_PLAYER_DATA } from './playerQuery';
 import { ISocialMediaAccount, IPlayer } from '../../interfaces';
 import { USER_INTL } from '../../utils/constants';
+import { getPlayerRole } from '../../utils';
 
 interface Props {
   playerId: IPlayer['id'];
@@ -28,6 +29,8 @@ const Player = ({ playerId }: Props) => {
     ? `${first_name} "${nick_name}" ${last_name}`
     : nick_name;
 
+  const playerRoles = getPlayerRole(player);
+
   return (
     <div>
       <h1>{displayName} <img src={country.images.thumbnail} alt="" role="presentation" /></h1>
@@ -35,6 +38,7 @@ const Player = ({ playerId }: Props) => {
 
       <div>
         Pro Player since: {proPlayerSince}
+        Role{playerRoles.length > 1 && 's'}:{playerRoles.map(r => ` ${r}`)}.
       </div>
 
       <footer>
