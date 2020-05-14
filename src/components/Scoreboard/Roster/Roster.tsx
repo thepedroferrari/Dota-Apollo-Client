@@ -7,9 +7,7 @@ import { Placement } from '../../../enums';
 import { useMatches } from '../../../hooks';
 import { TQualified } from '../../../interfaces';
 import Player from '../../Player';
-
-const DPC_TO_QUALIFY = 3690;
-const NUMBER_OF_TEAMS_TO_QUALIFY = 12;
+import { getRosterStatus } from '../../../utils/getRosterStatus';
 
 interface Props {
   position: number;
@@ -36,11 +34,7 @@ function Roster({ position, rosterId, name, logo, dpc }: Props) {
 
   if (!matches) return null;
 
-  const status: TQualified = dpc > DPC_TO_QUALIFY
-    ? 'Invited'
-    : position && position < NUMBER_OF_TEAMS_TO_QUALIFY // position starts at 0
-      ? 'Qualified'
-      : 'Not Qualified';
+  const status = getRosterStatus(dpc, position);
 
   return (
     <Link to={`/team/${rosterId}`} key={rosterId}>

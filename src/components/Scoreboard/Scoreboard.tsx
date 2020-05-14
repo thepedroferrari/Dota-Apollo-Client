@@ -22,7 +22,6 @@ function Scoreboard() {
     <div>
       <h1>SCOREBOARD</h1>
 
-      <Match rosterId={"44016"} eventId={189345} future />
       {sortedRosters.map((roster: IRoster, i) => (
 
         <Roster

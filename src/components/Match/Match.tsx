@@ -7,7 +7,7 @@ import { getRosterTeamNames } from '../../utils/getRosterTeamNames';
 import { useCountdown } from '../../hooks/useCountdown';
 
 interface Props {
-  eventId: number;
+  eventId: IEvent['id'];
   future?: boolean;
   rosterId: string;
 }
@@ -24,7 +24,7 @@ interface IFutureMatch {
 
 const Match = ({ eventId, rosterId, future }: Props) => {
   const { loading, error, data } = useQuery(GET_MATCH_DATA, {
-    variables: { id: eventId }
+    variables: { id: Number(eventId) }
   });
 
   if (loading) return <h1>Loading</h1>;

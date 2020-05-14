@@ -12,6 +12,11 @@ const TEAM_QUERY = gql`
         }
       }
     }
+    eventsByRoster(rosterId: $rosterId) {
+      id
+      start
+      scores
+    }
   }
 `;
 
