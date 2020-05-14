@@ -41,9 +41,16 @@ const Team = ({ match }: RouteChildrenProps<TeamParams>) => {
         <Match eventId={eventId} rosterId={String(rosterId)} key={eventId} />
       ))}
 
-      {matches?.future.map(eventId => (
-        <Match eventId={eventId} rosterId={String(rosterId)} key={eventId} future />
-      ))}
+      {
+        // Future matches call a Countdown component, each countdown starts a timeout.
+        // if we have a heavy load and too many countdowns start at the same time
+        // we might see the second going down at a slightly pace. For most cases
+        // this is fine but if we wanted to make it better we could have one countdown
+        // state and subscribe every child to the same state to be updated by the
+        // timeout.
+        matches?.future.map(eventId => (
+          <Match eventId={eventId} rosterId={String(rosterId)} key={eventId} future />
+        ))}
     </div>
   );
 };

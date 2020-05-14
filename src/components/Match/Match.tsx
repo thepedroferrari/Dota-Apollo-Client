@@ -4,7 +4,7 @@ import { GET_MATCH_DATA } from './matchQuery';
 import { getEnemyRosterId } from '../../utils/getEnemyRosterId';
 import { IEvent } from '../../interfaces';
 import { getRosterTeamNames } from '../../utils/getRosterTeamNames';
-import { useCountdown } from '../../hooks/useCountdown';
+import Countdown from '../Countdown/Countdown';
 
 interface Props {
   eventId: IEvent['id'];
@@ -57,13 +57,11 @@ const PastMatch = ({ event, rosterId }: IPastMatch) => {
 };
 
 const FutureMatch = ({ start }: IFutureMatch) => {
-  const { timeLeft } = useCountdown(start);
-  const { days, hours, minutes, seconds } = timeLeft;
 
   return (
     <div>
       <p>The match will start in</p>
-      <time>{days}Days, {hours}h {minutes}m {seconds}s</time>
+      <Countdown date={start} />
     </div>
   );
 };

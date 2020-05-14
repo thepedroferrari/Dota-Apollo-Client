@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ONE_DAY_MS, ONE_HOUR_MS, ONE_MINUTE_MS, ONE_SECOND_MS } from '../utils/constants';
 
 interface Timeleft {
   days: number;
@@ -18,10 +19,10 @@ const getTimeLeft = (date: number): Timeleft => {
 
   if (difference > 0) {
     timeLeft = {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60)
+      days: Math.floor(difference / ONE_DAY_MS),
+      hours: Math.floor((difference / ONE_HOUR_MS) % 24),
+      minutes: Math.floor((difference / ONE_MINUTE_MS) % 60),
+      seconds: Math.floor((difference / ONE_SECOND_MS) % 60)
     };
   }
 
@@ -32,9 +33,13 @@ export function useCountdown(date: number) {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft(date));
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setTimeLeft(getTimeLeft(date));
     }, 1000);
+
+    return function cleanup() {
+      clearTimeout(timer);
+    };
   });
 
   const gameStarted =

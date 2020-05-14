@@ -9,6 +9,7 @@ interface Props {
 
 const Countdown = React.memo(({ date, onEnd }: Props) => {
   const { timeLeft, gameStarted } = useCountdown(date);
+  const { days, hours, minutes, seconds } = timeLeft;
 
   React.useEffect(() => {
     if (gameStarted && onEnd) {
@@ -17,24 +18,7 @@ const Countdown = React.memo(({ date, onEnd }: Props) => {
   }, []);
 
   return (
-    <time>
-      <div>
-        {timeLeft.days}
-        <span>days</span>
-      </div>
-      <div>
-        {timeLeft.hours}
-        <span>hours</span>
-      </div>
-      <div>
-        {timeLeft.minutes}
-        <span>minutes</span>
-      </div>
-      <div>
-        {timeLeft.seconds}
-        <span>seconds</span>
-      </div>
-    </time>
+    <time>{days}Days, {hours}h {minutes}m {seconds}s</time>
   );
 });
 

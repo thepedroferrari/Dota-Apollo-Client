@@ -1,6 +1,5 @@
 import { TQualified, IRoster } from '../interfaces';
-const DPC_TO_QUALIFY = 3690;
-const NUMBER_OF_TEAMS_TO_QUALIFY = 12;
+import { DPC_TO_QUALIFY, NUMBER_OF_TEAMS_TO_QUALIFY } from './constants';
 
 export const getRosterStatus = (
   dpc: IRoster['dpc_points'],
