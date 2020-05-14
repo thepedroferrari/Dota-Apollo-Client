@@ -5,8 +5,6 @@ import { useQuery } from '@apollo/client';
 import { GET_ROSTER_DATA } from './rosterQuery';
 import { Placement } from '../../../enums';
 import { useMatches } from '../../../hooks';
-import { TQualified } from '../../../interfaces';
-import Player from '../../Player';
 import { getRosterStatus } from '../../../utils/getRosterStatus';
 
 interface Props {

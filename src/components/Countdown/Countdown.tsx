@@ -15,7 +15,7 @@ const Countdown = React.memo(({ date, onEnd }: Props) => {
     if (gameStarted && onEnd) {
       onEnd();
     }
-  }, []);
+  }, [gameStarted, onEnd]);
 
   return (
     <time>{days}Days, {hours}h {minutes}m {seconds}s</time>

@@ -1,16 +1,17 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_PLAYER_DATA } from './playerQuery';
-import { ISocialMediaAccount } from '../../interfaces';
+import { ISocialMediaAccount, IPlayer } from '../../interfaces';
+import { USER_INTL } from '../../utils/constants';
 
 interface Props {
-  playerId: number;
+  playerId: IPlayer['id'];
 }
 
 const Player = ({ playerId }: Props) => {
   const { loading, error, data } = useQuery(GET_PLAYER_DATA, {
     variables: {
-      id: playerId
+      id: Number(playerId)
     }
   });
 
@@ -18,15 +19,19 @@ const Player = ({ playerId }: Props) => {
   if (error) return <p>Error...</p>;
 
   const { player } = data;
-  const { first_name, nick_name, last_name, images, social_media_accounts, country, roles } = player;
+  const { first_name, nick_name, last_name, images, social_media_accounts, country, roles } = player as IPlayer;
 
-  console.log('MEEEH', first_name, nick_name, last_name, images, social_media_accounts, country, roles);
-  const proPlayerSince = String(new Date(roles[roles.length - 1].from));
+  const firstRole = new Date(String([roles.length - 1]));
+  const proPlayerSince = new Intl.DateTimeFormat(USER_INTL).format(firstRole);
+
+  const displayName = first_name && last_name
+    ? `${first_name} "${nick_name}" ${last_name}`
+    : nick_name;
 
   return (
     <div>
-      <h1>{first_name && first_name} {nick_name} {last_name} FROMMMM: {country.name} <img src={country.images.thumbnail} alt="" role="presentation" /></h1>
-      <img src={images.default} alt={`Picture of the player ${nick_name}`} />
+      <h1>{displayName} <img src={country.images.thumbnail} alt="" role="presentation" /></h1>
+      <img src={images.default} alt={`Player ${nick_name}`} />
 
       <div>
         Pro Player since: {proPlayerSince}
@@ -34,7 +39,7 @@ const Player = ({ playerId }: Props) => {
 
       <footer>
         {social_media_accounts.map((account: ISocialMediaAccount) => (
-          <a href={account.url} target="_blank">{account.name}</a>
+          <a key={account.name} href={account.url} target="_blank" rel="noopener noreferrer">{account.name}</a>
         ))}
       </footer>
 

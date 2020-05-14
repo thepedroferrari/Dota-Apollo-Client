@@ -11,6 +11,9 @@ const TEAM_QUERY = gql`
           default
         }
       }
+    	players {
+        id
+      }
     }
     eventsByRoster(rosterId: $rosterId) {
       id
