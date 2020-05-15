@@ -9,8 +9,8 @@ export const getRosterStatus = (
     dpc > DPC_TO_QUALIFY
       ? 'Invited'
       : position && position < NUMBER_OF_TEAMS_TO_QUALIFY // position starts at 0
-      ? 'Qualified'
-      : 'Not Qualified';
+        ? 'Qualified'
+        : 'Out';
 
   return status;
 };

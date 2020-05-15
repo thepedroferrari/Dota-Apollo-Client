@@ -32,8 +32,12 @@ const Player = ({ playerId }: Props) => {
   const playerRoles = roles && getPlayerRole(roles);
 
   return (
-    <div>
-      <h1>{displayName} <img src={country.images.thumbnail} alt="" role="presentation" /></h1>
+    <section >
+      <header>
+        <h1>
+          {displayName}{' '}<img src={country.images.thumbnail} alt="" role="presentation" />
+        </h1>
+      </header>
       <img src={images.default} alt={`Player ${nick_name}`} />
 
       <div>
@@ -42,13 +46,13 @@ const Player = ({ playerId }: Props) => {
         Role{playerRoles && playerRoles.length > 1 && 's'}:{playerRoles?.map(r => ` ${r}`)}.
       </div>
 
-      <footer>
+      <address>
         {social_media_accounts.map((account: ISocialMediaAccount) => (
           <a key={account.name} href={account.url} target="_blank" rel="noopener noreferrer">{account.name}</a>
         ))}
-      </footer>
+      </address>
 
-    </div>
+    </section>
   );
 };
 

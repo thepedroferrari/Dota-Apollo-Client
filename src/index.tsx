@@ -10,6 +10,7 @@ import {
 import App from './App';
 import Theme from './components/Styles/Theme';
 import GlobalStyles from './components/Styles/GlobalStyles';
+import { ResetStyles } from './components/Styles/ResetStyles';
 
 
 const GRAPHQL_SERVER = process.env.REACT_APP_GRAPHQL_ENDPOINT || 'http://localhost:4001/graphql';
@@ -25,7 +26,7 @@ const client = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={client}>
     <React.StrictMode>
-
+      <ResetStyles />
       <GlobalStyles />
       <Theme>
         <App />

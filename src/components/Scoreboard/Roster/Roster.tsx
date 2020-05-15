@@ -6,6 +6,7 @@ import { GET_ROSTER_DATA } from './rosterQuery';
 import { Placement } from '../../../enums';
 import { useMatches } from '../../../hooks';
 import { getRosterStatus } from '../../../utils/getRosterStatus';
+import { GridRow } from '../ScoreboardGrid';
 
 interface Props {
   position: number;
@@ -35,18 +36,18 @@ function Roster({ position, rosterId, name, logo, dpc }: Props) {
   const status = getRosterStatus(dpc, position);
 
   return (
-    <Link to={`/team/${rosterId}`} key={rosterId}>
-      <div>
-        {Placement[position]} {' | '}
+    <GridRow status={status}>
+      <Link to={`/team/${rosterId}`} key={rosterId}>
+        <div>{position + 1}</div>
         <img src={logo} alt={`Logo of ${name}`} role="presentation" />
-        {name} {' | '}
-        {status} {' | '}
-        {matches.played} {' | '}
-        {matches.won} {' | '}
-        {matches.lost} {' | '}
-        {dpc}
-      </div>
-    </Link>
+        <div>{name}</div>
+        <mark>{status}</mark>
+        <div>{matches.played}</div>
+        <div>{matches.won}</div>
+        <div>{matches.lost}</div>
+        <div>{dpc}</div>
+      </Link>
+    </GridRow>
   );
 }
 

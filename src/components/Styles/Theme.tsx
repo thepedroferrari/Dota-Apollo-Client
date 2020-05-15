@@ -5,12 +5,17 @@ const theme = {
   colors: {
     dotaUi: '#1B1E21',
     dotaUi2: '#2F363D',
+    background: '#1C242D',
+    winner: '#64D74A',
+    warning: '#fff34f',
+    loser: '#FF5F51',
+    textWhite: '#FFFFFF',
   },
   fonts: ["sans-serif", "Roboto", "Cinzel"],
   fontSizes: {
-    small: "1em",
-    medium: "2em",
-    large: "3em"
+    small: "1rem",
+    medium: "2rem",
+    large: "3rem"
   }
 };
 
@@ -29,40 +34,34 @@ wiki1
 #FFAEA3	wiki4
 #FDE6E3	wiki5
 #E4C62E	wiki6
-#E38800
-ui1
+#E38800 ui1
 #1B1E21	ui2
-#2F363D
-strength
+#2F363D strength
 #B9500B	agility
 #167C13	intelligence
 #257DAE	radiant
 #598307	dire
 #A83806	neutral
-#434137
-creep
+#434137 creep
 #2277AA	creep-hero
 #FFBE66	lane creep
 #2277AA	jungle creep
 #2277AA	ancient creep
 #2277AA	summon
 #FFBE66	ward
-#64D74A
-building
+#64D74A building
 #2277AA	other
 pink	courier
 #FFBE66	attached
 #FFE466	clone
-#FFBE66
-hero
+#FFBE66 hero
 #B44335	ultimate
 #414141	item
 #227722	npc
 #2277AA	aghanims
 #5B388F	talent
 #BDB76B	rune
-#E3B505
-gold
+#E3B505 gold
 #DAA520	armor
 #B911FC	caster
 #1A88FC	support
@@ -72,8 +71,7 @@ gold
 #FEFEFE	attributes
 #FEFEFE	armaments
 #FEFEFE	arcane
-#FEFEFE
-cos_common
+#FEFEFE cos_common
 #b0c3d9	cos_uncommon
 #5e98d9	cos_rare
 #4b69ff	cos_mythical
