@@ -1,8 +1,8 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
+
 import Countdown from './Countdown';
 import { ONE_DAY_MS, ONE_MINUTE_MS } from '../../utils/constants';
-
 
 storiesOf('Countdown', module)
   .add('My Birthday in 2020',

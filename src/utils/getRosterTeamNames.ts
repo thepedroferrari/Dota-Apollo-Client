@@ -1,4 +1,5 @@
 import { IEvent } from '../interfaces';
+
 export const getRosterTeamNames = (event: IEvent, rosterId: string) => {
   // may be undefined in case we pass a wrong RosterId.
   const home = event.rosters

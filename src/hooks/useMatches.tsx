@@ -1,5 +1,5 @@
-import { ITeamMatches, IEvent } from '../interfaces';
 import { ApolloError } from '@apollo/client';
+import { ITeamMatches, IEvent } from '../interfaces';
 import { getEnemyRosterId } from '../utils/getEnemyRosterId';
 
 interface IData {
