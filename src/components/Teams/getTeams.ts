@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-const TEAMS_QUERY = gql`
+const GET_TEAMS = gql`
   query teams {
     teams {
       id
