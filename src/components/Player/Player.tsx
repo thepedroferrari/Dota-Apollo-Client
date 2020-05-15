@@ -19,7 +19,7 @@ const Player = ({ playerId }: Props) => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error...</p>;
 
-  const { player } = data;
+  const { player }: { player: IPlayer; } = data;
   const { first_name, nick_name, last_name, images, social_media_accounts, country, roles } = player as IPlayer;
 
   const firstRole = new Date(String([roles.length - 1]));
@@ -29,7 +29,7 @@ const Player = ({ playerId }: Props) => {
     ? `${first_name} "${nick_name}" ${last_name}`
     : nick_name;
 
-  const playerRoles = getPlayerRole(player);
+  const playerRoles = roles && getPlayerRole(roles);
 
   return (
     <div>
@@ -38,7 +38,8 @@ const Player = ({ playerId }: Props) => {
 
       <div>
         Pro Player since: {proPlayerSince}
-        Role{playerRoles.length > 1 && 's'}:{playerRoles.map(r => ` ${r}`)}.
+        <br />
+        Role{playerRoles && playerRoles.length > 1 && 's'}:{playerRoles?.map(r => ` ${r}`)}.
       </div>
 
       <footer>
