@@ -19,9 +19,9 @@ exports[`Storyshots Countdown In 5 Minutes 1`] = `
   Days, 
   0
   h 
-  5
+  4
   m 
-  0
+  59
   s
 </time>
 `;
@@ -30,11 +30,11 @@ exports[`Storyshots Countdown My Birthday in 2020 1`] = `
 <time>
   229
   Days, 
-  7
+  6
   h 
-  48
+  4
   m 
-  39
+  17
   s
 </time>
 `;
@@ -43,11 +43,11 @@ exports[`Storyshots Countdown My Birthday in 2021 1`] = `
 <time>
   594
   Days, 
-  7
+  6
   h 
-  48
+  4
   m 
-  39
+  17
   s
 </time>
 `;

@@ -1,11 +1,5 @@
 {
   "name": "dota-client",
-  "jest": {
-    "transform": {
-      "^.+\\.[tj]sx?$": "babel-jest",
-      "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx"
-    }
-  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
