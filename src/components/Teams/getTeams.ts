@@ -9,4 +9,4 @@ const GET_TEAMS = gql`
   }
 `;
 
-export default TEAMS_QUERY;
+export default GET_TEAMS;
