@@ -5,9 +5,10 @@ export const getRosterStatus = (
   dpc: IRoster['dpc_points'],
   position: number | undefined = undefined
 ): TQualified => {
-  const status: TQualified = dpc > DPC_TO_QUALIFY
-    ? 'Invited'
-    : position && position < NUMBER_OF_TEAMS_TO_QUALIFY // position starts at 0
+  const status: TQualified =
+    dpc > DPC_TO_QUALIFY
+      ? 'Invited'
+      : position && position < NUMBER_OF_TEAMS_TO_QUALIFY // position starts at 0
       ? 'Qualified'
       : 'Not Qualified';
 

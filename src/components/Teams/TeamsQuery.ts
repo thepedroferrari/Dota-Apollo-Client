@@ -6,7 +6,7 @@ const TEAMS_QUERY = gql`
       id
       name
     }
-}
+  }
 `;
 
 export default TEAMS_QUERY;

@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react';
-import { ONE_DAY_MS, ONE_HOUR_MS, ONE_MINUTE_MS, ONE_SECOND_MS } from '../utils/constants';
+import {
+  ONE_DAY_MS,
+  ONE_HOUR_MS,
+  ONE_MINUTE_MS,
+  ONE_SECOND_MS,
+} from '../utils/constants';
 
 interface Timeleft {
   days: number;
@@ -14,7 +19,7 @@ const getTimeLeft = (date: number): Timeleft => {
     days: 0,
     hours: 0,
     minutes: 0,
-    seconds: 0
+    seconds: 0,
   };
 
   if (difference > 0) {
@@ -22,7 +27,7 @@ const getTimeLeft = (date: number): Timeleft => {
       days: Math.floor(difference / ONE_DAY_MS),
       hours: Math.floor((difference / ONE_HOUR_MS) % 24),
       minutes: Math.floor((difference / ONE_MINUTE_MS) % 60),
-      seconds: Math.floor((difference / ONE_SECOND_MS) % 60)
+      seconds: Math.floor((difference / ONE_SECOND_MS) % 60),
     };
   }
 

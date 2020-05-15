@@ -7,8 +7,8 @@ interface IData {
 }
 
 interface IQuery {
-  loading: boolean,
-  error?: ApolloError,
+  loading: boolean;
+  error?: ApolloError;
   data: IData;
 }
 
@@ -23,7 +23,7 @@ export function useMatches({ query, rosterId }: Props) {
   if (loading || error) {
     return {
       loading,
-      error
+      error,
     };
   }
 
@@ -33,7 +33,7 @@ export function useMatches({ query, rosterId }: Props) {
     future: [],
     played: 0,
     won: 0,
-    lost: 0
+    lost: 0,
   };
   const { eventsByRoster } = data;
 
@@ -43,7 +43,7 @@ export function useMatches({ query, rosterId }: Props) {
     if (event.start > now) {
       matches.future.push(event.id);
       return;
-    };
+    }
     matches.past.push(event.id);
 
     // getting the ID of whom they played against in this event

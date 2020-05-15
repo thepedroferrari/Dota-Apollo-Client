@@ -19,7 +19,7 @@ module.exports = {
   },
   plugins: ['react', 'prettier'],
   rules: {
-    'prettier/prettier': 'warning',
+    'prettier/prettier': 1,
   },
   env: {
     jest: true,

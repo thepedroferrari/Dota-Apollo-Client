@@ -45,7 +45,6 @@ export function sortStringsBy<T, K extends keyof T>(
     return 0;
   });
 
-
   // now the copied array is modified by the sort function, so we just need to
   // return it.
   return order === 'dsc' ? copyOfArray.reverse() : copyOfArray;

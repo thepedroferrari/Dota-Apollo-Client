@@ -14,6 +14,3 @@ const PLAYERS_QUERY = gql`
 `;
 
 export default PLAYERS_QUERY;
-
-
-

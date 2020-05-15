@@ -1,7 +1,7 @@
-import { IPlayer, IPlayerRoleName } from '../interfaces';
+import { IPlayer, TPlayerRoleName } from '../interfaces';
 
-export const getPlayerRole = (player: IPlayer): IPlayerRoleName[] => {
-  const playerRoles: IPlayerRoleName[] = [];
+export const getPlayerRole = (player: IPlayer): TPlayerRoleName[] => {
+  const playerRoles: TPlayerRoleName[] = [];
   const currentRoles = player.roles[0].name.split('/');
 
   const roleSwitcheroo = (role: string) => {
@@ -26,7 +26,7 @@ export const getPlayerRole = (player: IPlayer): IPlayerRoleName[] => {
         break;
     }
   };
-  currentRoles.forEach(role => roleSwitcheroo(role));
+  currentRoles.forEach((role) => roleSwitcheroo(role));
 
   return playerRoles;
 };

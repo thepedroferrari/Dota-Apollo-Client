@@ -16,4 +16,3 @@ export const GET_MATCH_DATA = gql`
     }
   }
 `;
-
