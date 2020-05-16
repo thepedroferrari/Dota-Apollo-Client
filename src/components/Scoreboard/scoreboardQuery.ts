@@ -7,6 +7,7 @@ export const GET_SCOREBOARD_DATA = gql`
       dpc_points
       teams {
         name
+        short_name
         images {
           thumbnail
         }

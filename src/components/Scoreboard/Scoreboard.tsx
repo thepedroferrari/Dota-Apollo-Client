@@ -6,6 +6,8 @@ import { sortNumbersBy } from '../../utils/sort';
 import Roster from './Roster/Roster';
 import { ScoreboardGrid } from './ScoreboardGrid';
 import { Title } from '../CommonUi/Title';
+import { isSmall } from '../../utils/window';
+import ScoreboardHeader from './ScoreboardHeader';
 
 function Scoreboard() {
   const { loading, error, data } = useQuery(GET_SCOREBOARD_DATA);
@@ -20,11 +22,12 @@ function Scoreboard() {
   return (
     <ScoreboardGrid>
       <Title align='center'>DPC STANDINGS</Title>
+      <ScoreboardHeader />
       {sortedRosters.map((roster: IRoster, i) => (
         <Roster
           dpc={roster.dpc_points}
           key={roster.id}
-          name={roster.teams[0].name}
+          name={isSmall ? roster.teams[0].short_name : roster.teams[0].name}
           logo={roster.teams[0].images.thumbnail}
           position={i}
           rosterId={roster.id}

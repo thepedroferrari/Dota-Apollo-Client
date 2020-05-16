@@ -12,7 +12,7 @@ export const ScoreboardGrid = styled.div<any>`
     margin-bottom: 40px;
   }
 
-  & a {
+  & .grid-item {
     display: grid;
     grid-template-columns: auto 50px 1fr 100px 25px 25px 25px 80px;
     grid-gap: 10px;
@@ -22,9 +22,15 @@ export const ScoreboardGrid = styled.div<any>`
     border-radius: 10px;
     text-decoration: none;
     color: ${props => props.theme.colors.textWhite};
+
     &:hover {
       background: ${props => hex2Rgba(props.theme.colors.background, 1)};
+      & img {
+        opacity: 1;
+        filter: grayscale(0);
+      }
     }
+
     & :first-child {
       margin-left: -10px;
       background: ${props => props.theme.colors.dotaUi};
@@ -39,14 +45,46 @@ export const ScoreboardGrid = styled.div<any>`
       align-items: center;
       display: flex;
     }
-}`;
 
-export const GridHeader = styled.header`
+    & :last-child {
+      text-align: right;
+      padding-right: 16px;
+    }
 
+    img {
+      max-width: 35px;
+      padding: 5px;
+      filter: grayscale(100);
+      opacity: .8;
+    }
+  }
+  @media (max-width: 540px) {
+    font-size: 14px;
+    .grid-item {
+      grid-template-columns: auto 0 1fr 80px 25px 25px 25px 80px;
+      grid-gap: 5px;
+      margin: 10px 0px;
+      height: 48px;
+
+      img {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+      }
+
+      .status {
+        font-size: 12px;
+      }
+
+      & :first-child {
+        margin-left: -7px;
+      }
+    }
+  }
 `;
 
 export const GridRow = styled.div<IStyledColors & any>`
-  & a {
+  & .grid-item {
     box-shadow: inset 0 0 10px 2px ${(props) => {
     if (props.status === 'Invited') return hex2Rgba(props.theme.colors.winner, 0.7);
     if (props.status === 'Qualified') return hex2Rgba(props.theme.colors.warning, 0.7);
@@ -60,7 +98,7 @@ export const GridRow = styled.div<IStyledColors & any>`
   }}
   }
 
-    & mark {
+    & .status {
       background: transparent;
       text-align: center;
       margin-right: 20px;
@@ -75,8 +113,6 @@ export const GridRow = styled.div<IStyledColors & any>`
     if (props.status === 'Invited') return hex2Rgba(props.theme.colors.winner, 1);
     if (props.status === 'Qualified') return hex2Rgba(props.theme.colors.warning, 1);
     return hex2Rgba(props.theme.colors.loser, 1);
-  }
-  };
-
+  }};
   }
 }`;

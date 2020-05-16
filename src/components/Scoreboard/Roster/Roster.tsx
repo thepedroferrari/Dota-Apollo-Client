@@ -37,11 +37,11 @@ function Roster({ position, rosterId, name, logo, dpc }: Props) {
 
   return (
     <GridRow status={status}>
-      <Link to={`/team/${rosterId}`} key={rosterId}>
+      <Link to={`/team/${rosterId}`} key={rosterId} className="grid-item">
         <div>{position + 1}</div>
         <img src={logo} alt={`Logo of ${name}`} role="presentation" />
         <div>{name}</div>
-        <mark>{status}</mark>
+        <mark className="status">{status}</mark>
         <div>{matches.played}</div>
         <div>{matches.won}</div>
         <div>{matches.lost}</div>
