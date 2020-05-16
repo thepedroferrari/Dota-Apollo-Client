@@ -10,17 +10,12 @@ export const ScoreboardGrid = styled.main<any>`
   font-size: 0.7em;
   font-weight: 100;
 
-  /* Title and Header + 12 teams */
-  & :nth-child(14) {
-    margin-bottom: 40px;
-  }
-
   & .grid-item {
     display: grid;
     grid-template-columns: auto 50px 1fr 100px 25px 25px 25px 80px;
     gap: 10px;
     background: ${props => hex2Rgba(props.theme.colors.background, .8)};
-    margin: 10px 30px;
+    margin: 1em 2em;
     align-items: center;
     border-radius: 8px;
     text-decoration: none;
@@ -122,17 +117,17 @@ export const GridRow = styled.div<IStyledColors & any>`
     & .status {
       background: transparent;
       text-align: center;
-      margin-right: 20px;
+      margin-right: 1em;
       color: ${props => props.theme.colors.textWhite};
       border-radius: 8px;
-      border: 2px solid ${(props) => {
+      border: 1px solid ${(props) => {
     if (props.status === 'Invited') return props.theme.colors.winner;
     if (props.status === 'Qualified') return props.theme.colors.warning;
     return props.theme.colors.loser;
   }};
       box-shadow: inset 0 0 10px 1px ${(props) => {
-    if (props.status === 'Invited') return hex2Rgba(props.theme.colors.winner, 1);
-    if (props.status === 'Qualified') return hex2Rgba(props.theme.colors.warning, 1);
+    if (props.status === 'Invited') return hex2Rgba(props.theme.colors.winner, 0.75);
+    if (props.status === 'Qualified') return hex2Rgba(props.theme.colors.warning, 0.75);
     return hex2Rgba(props.theme.colors.loser, 1);
   }};
   }

@@ -8,7 +8,7 @@ const TEAM_QUERY = gql`
         id
         name
         images {
-          thumbnail
+          default
         }
         social_media_accounts {
           name

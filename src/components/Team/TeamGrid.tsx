@@ -4,6 +4,7 @@ export const TeamGrid = styled.main`
   display: grid;
   grid-template-areas:
     'title title'
+    'logo logo'
     'rank points'
     'matches matches'
     'players players';
@@ -16,6 +17,7 @@ export const TeamGrid = styled.main`
 
   .title {
     grid-area: title;
+    margin-bottom: 0;
   }
   .rank {
     grid-area: rank;
@@ -23,6 +25,11 @@ export const TeamGrid = styled.main`
   }
   .points {
     grid-area: points;
+  }
+  .logo {
+    grid-area: logo;
+    margin: 0 auto;
+    max-width: 96px;
   }
 `;
 

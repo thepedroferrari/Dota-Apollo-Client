@@ -12,8 +12,9 @@ const theme = {
     winner: '#64D74A',
     warning: '#fff34f',
     loser: '#FF5F51',
+    score: '#FEFEFE',
     textWhite: '#FFFFFF',
-    title: '#FEFEFE',
+    title: '#FFFFFF',
     subtitle: '#FEFEFE',
   },
   textShadows: {
@@ -36,10 +37,10 @@ const theme = {
     small: "0.7em",
     medium: "1em",
     large: "1.75em",
-    title: `${isSmall ? "1.75em" : "2.5em"}`,
-    subtitle: `${isSmall ? "1.5em" : "1.75em"}`,
-    underTitle: `${isSmall ? "1.75em" : "2.25em"}`,
-    paragraph: `${isSmall ? ".9em" : "1em"}`,
+    title: `${isSmall ? "2.25em" : "2.75em"}`,
+    subtitle: `${isSmall ? "1.85em" : "2.25em"}`,
+    underTitle: `${isSmall ? "1.25em" : "1.5em"}`,
+    paragraph: `${isSmall ? "1.15em" : "1em"}`, // yes that's correct :)
   }
 };
 
@@ -48,8 +49,6 @@ const Theme = ({ children }: { children: React.ReactNode; }) => (
 );
 
 export default Theme;
-
-
 
 
 /*

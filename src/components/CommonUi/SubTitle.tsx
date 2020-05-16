@@ -6,5 +6,6 @@ export const SubTitle = styled.h2<any>`
   text-shadow: ${props => props.theme.textShadows.subTitle};
   margin: 1em 0 .5em 0;
   letter-spacing: 2px;
-  text-align: ${props => props.center ? 'center' : 'left'}
+  text-align: ${props => props.center ? 'center' : 'left'};
+  text-transform: uppercase;
 `;

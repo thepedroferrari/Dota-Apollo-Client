@@ -1,9 +1,6 @@
 // Sort an array of objects by an specific key where Array[key] leads to a number.
-export function sortNumbersBy<T, K extends keyof T>(
-  key: K,
-  arr: T[],
-  order: 'asc' | 'dsc' = 'asc'
-): T[] | undefined {
+export function sortNumbersBy<T, K extends keyof T>
+  (key: K, arr: T[], order: 'asc' | 'dsc' = 'asc'): T[] | undefined {
   // If we try to use this function and pass a key that leads to values other than
   // numeric ones we will end up returning the original array. To avoid confusion
   // that may lead to unwanted bugs we are returning undefined.

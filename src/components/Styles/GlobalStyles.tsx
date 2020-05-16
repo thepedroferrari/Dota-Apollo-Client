@@ -1,13 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
-import background from '../../assets/images/bg-06.png';
+import background from '../../assets/images/bg-06.jpg';
 
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Open+Sans:wght@300&display=swap');
 
   :root {
+    @media (max-width: 540px) {
+      font-size: calc(2vw + 1vh + 1vmin);
+    }
     font-size: calc(1vw + 1vh + .5vmin);
     @media (min-width: 960px) {
-      font-size: calc(1vw + .75vh + .25vmin);
+      font-size: calc(1vw + 1vh + .25vmin);
     }
   }
 
@@ -26,7 +29,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${background});
+    background: linear-gradient(140deg,rgba(0,0,0,.55) 35%, rgba(0, 0, 0, 0.15)), url(${background});
     background-attachment: fixed;
     background-color: #1B1E21;
     background-position: center;

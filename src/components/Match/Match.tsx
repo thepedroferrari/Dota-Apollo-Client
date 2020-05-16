@@ -5,6 +5,7 @@ import { getEnemyRosterId } from '../../utils/getEnemyRosterId';
 import { IEvent } from '../../interfaces';
 import { getRosterTeamNames } from '../../utils/getRosterTeamNames';
 import Countdown from '../Countdown/Countdown';
+import { PastMatchGrid } from './PastMatchGrid';
 
 interface Props {
   eventId: IEvent['id'];
@@ -34,8 +35,6 @@ const Match = ({ eventId, rosterId, future }: Props) => {
 
   return (
     <section>
-      <header>{event.tournament_name}</header>
-      <small>best of {event.bestOf}</small>
       {future ? (
         <FutureMatch start={event.start} />
       ) : (
@@ -50,9 +49,12 @@ const PastMatch = ({ event, rosterId }: IPastMatch) => {
   const { home, enemy } = getRosterTeamNames(event, rosterId);
 
   return (
-    <div>
-      {home}: [{event.scores[rosterId]}] | [{event.scores[enemyRosterId]}] {enemy}
-    </div>
+    <PastMatchGrid>
+      <span>{home}</span>
+      <span>{event.scores[rosterId]}</span>
+      <span>{event.scores[enemyRosterId]}</span>
+      <span>{enemy}</span>
+    </PastMatchGrid>
   );
 };
 

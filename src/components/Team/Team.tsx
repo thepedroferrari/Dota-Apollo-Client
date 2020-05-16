@@ -49,12 +49,13 @@ const Team = ({ match }: RouteChildrenProps<TeamParams>) => {
 
   return (
     <TeamGrid>
-      <Title center className="title"><img alt={`Logo for the dota2 team ${team.name}`} src={team.images.thumbnail} /> {team.name}</Title>
+      <Title center className="title">{team.name}</Title>
+      <img className="logo" alt={`Logo for the dota2 team ${team.name}`} src={team.images.default} />
       <span className="rank">Rank: {Placement[position]}</span>
       <span className="points">DPC Points: {data.roster.dpc_points}</span>
 
       <MatchesGrid className="matches">
-        <SubTitle>Match History and Future</SubTitle>
+        <SubTitle center>Match History and Future</SubTitle>
         <Paragraph>{team.name} is a team from {team.country.name} that participated in {matches?.past.length || 0} matches for the DotA Pro Circuit 2020, winning {matches?.won || 0} of them while losing {matches?.lost || 0}; They achieved the {Placement[position]} position on the League. As of now, {team.name} is {getRosterStatus(sortedRosters[position].dpc_points, position).toLowerCase()} to the International, which has been postponed due to COVID-19.</Paragraph>
 
         {(matches?.future.length || 0) > 0 && <Paragraph>The team has {matches?.future.length} scheduled matches to try to increase their DotA Pro Circuit points.</Paragraph>}

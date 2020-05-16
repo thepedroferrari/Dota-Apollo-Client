@@ -4,7 +4,7 @@ import { boxShadowMixin } from '../../utils/styledMixins';
 
 
 const GridHeader = styled.header`
-  background: ${props => props.theme.colors.background};
+  background: ${props => props.theme.colors.dotaUi};
   box-shadow: ${boxShadowMixin(0, 10, 10, 0, '#000000', 0.75)};
   display: grid;
   grid-template-columns: 1fr 25px 25px 25px 65px;
