@@ -21,7 +21,7 @@ function Scoreboard() {
 
   return (
     <ScoreboardGrid>
-      <Title align='center'>DPC STANDINGS</Title>
+      <Title center>DPC STANDINGS</Title>
       <ScoreboardHeader />
       {sortedRosters.map((roster: IRoster, i) => (
         <Roster

@@ -8,12 +8,25 @@ const TEAM_QUERY = gql`
         id
         name
         images {
-          default
+          thumbnail
+        }
+        social_media_accounts {
+          name
+          url
+        }
+        country {
+          images {
+            thumbnail
+          }
         }
       }
     	players {
         id
       }
+    }
+    rosters {
+      id
+      dpc_points
     }
     eventsByRoster(rosterId: $rosterId) {
       id

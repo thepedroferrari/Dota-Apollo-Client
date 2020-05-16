@@ -7,6 +7,12 @@ import { ITeam, IRoster } from '../../interfaces';
 import { useMatches } from '../../hooks/useMatches';
 import Match from '../Match/Match';
 import Player from '../Player';
+import { Title } from '../CommonUi/Title';
+import { Placement } from '../../enums';
+import { sortNumbersBy } from '../../utils/sort';
+import { TeamGrid, MatchesGrid, PlayersGrid } from './TeamGrid';
+import { SubTitle } from '../CommonUi/SubTitle';
+import { getRosterStatus } from '../../utils/getRosterStatus';
 
 interface TeamParams {
   id: string;
@@ -32,20 +38,30 @@ const Team = ({ match }: RouteChildrenProps<TeamParams>) => {
 
   const team: ITeam = teams[0];
 
+
+  const { rosters }: { rosters: IRoster[]; } = data;
+  const sortedRosters = sortNumbersBy('dpc_points', rosters, 'dsc');
+  if (typeof sortedRosters === 'undefined') return null;
+
+  const position = sortedRosters.findIndex(roster => roster.id === rosterId);
+
   return (
-    <div>
-      <h1>{team.name}</h1>
-      <span>Points: {data.roster.dpc_points}</span>
-      <img alt={`Logo for the dota2 team ${team.name}`} src={team.images.default} />
-      <section>
-        {players.map(player => <Player key={player.id} playerId={player.id} />)}
-      </section>
-      <section>
-        <h2>Past results</h2>
+    <TeamGrid>
+      <Title center className="title"><img alt={`Logo for the dota2 team ${team.name}`} src={team.images.thumbnail} /> {team.name}</Title>
+      <span className="rank">Rank: {Placement[position]}</span>
+      <span className="points">DPC Points: {data.roster.dpc_points}</span>
+
+      <MatchesGrid className="matches">
+        <SubTitle>Match History and Future</SubTitle>
+        <p>{team.name} participated in {matches?.past.length || 0} matches for the DotA Pro Circuit 2020, winning {matches?.won || 0} of them while losing {matches?.lost || 0}; They achieved the {Placement[position]} position on the League. As of now, {team.name} is {getRosterStatus(sortedRosters[position].dpc_points, position).toLowerCase()} to the International, which has been postponed due to COVID-19.</p>
+
+        {(matches?.future.length || 0) > 0 && <p>The team has {matches?.future.length} scheduled matches to try to increase their DotA Pro Circuit points.</p>}
+
+        <SubTitle>Past results</SubTitle>
         {matches?.past.map(eventId => (
           <Match eventId={eventId} rosterId={rosterId} key={eventId} />
         ))}
-        <h2>Upcoming Matches</h2>
+        <SubTitle>Upcoming Matches</SubTitle>
         {
           // Future matches call a Countdown component, each countdown starts a timeout.
           // if we have a heavy load and too many countdowns start at the same time
@@ -53,11 +69,18 @@ const Team = ({ match }: RouteChildrenProps<TeamParams>) => {
           // this is fine but if we wanted to make it better we could have one countdown
           // state and subscribe every child to the same state to be updated by the
           // timeout.
+          // Alternativelly we could hide seconds in any match that will happen in
+          // more than one day in the future, and update the countdown every 60s.
           matches?.future.map(eventId => (
             <Match eventId={eventId} rosterId={rosterId} key={eventId} future />
           ))}
-      </section>
-    </div>
+      </MatchesGrid>
+
+
+      <PlayersGrid className="players">
+        {players.map(player => <Player key={player.id} playerId={player.id} />)}
+      </PlayersGrid>
+    </TeamGrid>
   );
 };
 

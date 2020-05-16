@@ -3,7 +3,7 @@ import { IStyledColors } from '../../interfaces';
 import { hex2Rgba } from '../../utils';
 import { boxShadowMixin } from '../../utils';
 
-export const ScoreboardGrid = styled.div<any>`
+export const ScoreboardGrid = styled.main<any>`
   padding: 30px 10px;
   max-width: 800px;
   margin: 0 auto;

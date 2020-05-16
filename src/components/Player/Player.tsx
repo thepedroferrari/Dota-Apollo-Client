@@ -4,6 +4,7 @@ import { GET_PLAYER_DATA } from './playerQuery';
 import { ISocialMediaAccount, IPlayer } from '../../interfaces';
 import { USER_INTL } from '../../utils/constants';
 import { getPlayerRole } from '../../utils';
+import SocialMedia from '../SocialMedia/SocialMedia';
 
 interface Props {
   playerId: IPlayer['id'];
@@ -46,12 +47,7 @@ const Player = ({ playerId }: Props) => {
         Role{playerRoles && playerRoles.length > 1 && 's'}:{playerRoles?.map(r => ` ${r}`)}.
       </div>
 
-      <address>
-        {social_media_accounts.map((account: ISocialMediaAccount) => (
-          <a key={account.name} href={account.url} target="_blank" rel="noopener noreferrer">{account.name}</a>
-        ))}
-      </address>
-
+      <SocialMedia accounts={social_media_accounts} />
     </section>
   );
 };

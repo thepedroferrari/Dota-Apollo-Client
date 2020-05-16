@@ -1,8 +1,11 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import { textShadowMixin } from '../../utils/styledMixins';
+import { isSmall } from '../../utils';
 
 const theme = {
   colors: {
+    aura: '#FF4b4b',
     dotaUi: '#1B1E21',
     dotaUi2: '#2F363D',
     background: '#1C242D',
@@ -10,12 +13,20 @@ const theme = {
     warning: '#fff34f',
     loser: '#FF5F51',
     textWhite: '#FFFFFF',
+    title: '#FEFEFE',
+    subtitle: '#FEFEFE',
+  },
+  textShadows: {
+    title: `${textShadowMixin(0, 0, 20, '#B44335')}, ${textShadowMixin(0, 0, 10, '#B44335')}, ${textShadowMixin(0, 0, 5, '#B44335')}`,
+    subTitle: `${textShadowMixin(0, 0, 16, '#257DAE')}, ${textShadowMixin(0, 0, 8, '#257DAE')}`,
   },
   fonts: ["sans-serif", "Roboto", "Cinzel"],
   fontSizes: {
     small: "1rem",
     medium: "2rem",
-    large: "3rem"
+    large: "3rem",
+    title: `${isSmall ? "2.75rem" : "4rem"}`,
+    subtitle: `${isSmall ? "2rem" : "2.75rem"}`,
   }
 };
 
@@ -24,6 +35,7 @@ const Theme = ({ children }: { children: React.ReactNode; }) => (
 );
 
 export default Theme;
+
 
 
 
