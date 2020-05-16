@@ -3,5 +3,7 @@ export * from './getPlayerRole';
 export * from './getEnemyRosterId';
 export * from './getRosterStatus';
 export * from './getRosterTeamNames';
+export * from './hex2Rgba';
 export * from './sort';
+export * from './styledMixins';
 export * from './window';
