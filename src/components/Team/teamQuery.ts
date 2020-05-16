@@ -15,6 +15,7 @@ const TEAM_QUERY = gql`
           url
         }
         country {
+          name
           images {
             thumbnail
           }

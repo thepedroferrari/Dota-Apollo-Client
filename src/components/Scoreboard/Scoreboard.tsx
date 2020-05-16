@@ -27,7 +27,7 @@ function Scoreboard() {
         <Roster
           dpc={roster.dpc_points}
           key={roster.id}
-          name={isSmall ? roster.teams[0].short_name : roster.teams[0].name}
+          name={roster.teams[0].short_name}
           logo={roster.teams[0].images.thumbnail}
           position={i}
           rosterId={roster.id}

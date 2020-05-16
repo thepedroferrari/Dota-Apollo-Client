@@ -5,7 +5,7 @@ export const Title = styled.h1<any>`
   font-size: ${props => props.theme.fontSizes.title};
   color: ${props => props.theme.colors.title};
   text-shadow:${props => props.theme.textShadows.title};
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   letter-spacing: 2px;
   text-align: ${props => props.center ? 'center' : 'left'}
 `;

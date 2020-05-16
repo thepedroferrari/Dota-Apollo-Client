@@ -13,6 +13,8 @@ import { sortNumbersBy } from '../../utils/sort';
 import { TeamGrid, MatchesGrid, PlayersGrid } from './TeamGrid';
 import { SubTitle } from '../CommonUi/SubTitle';
 import { getRosterStatus } from '../../utils/getRosterStatus';
+import { UnderTitle } from '../CommonUi/UnderTitle';
+import { Paragraph } from '../CommonUi/Paragraph';
 
 interface TeamParams {
   id: string;
@@ -53,15 +55,15 @@ const Team = ({ match }: RouteChildrenProps<TeamParams>) => {
 
       <MatchesGrid className="matches">
         <SubTitle>Match History and Future</SubTitle>
-        <p>{team.name} participated in {matches?.past.length || 0} matches for the DotA Pro Circuit 2020, winning {matches?.won || 0} of them while losing {matches?.lost || 0}; They achieved the {Placement[position]} position on the League. As of now, {team.name} is {getRosterStatus(sortedRosters[position].dpc_points, position).toLowerCase()} to the International, which has been postponed due to COVID-19.</p>
+        <Paragraph>{team.name} is a team from {team.country.name} that participated in {matches?.past.length || 0} matches for the DotA Pro Circuit 2020, winning {matches?.won || 0} of them while losing {matches?.lost || 0}; They achieved the {Placement[position]} position on the League. As of now, {team.name} is {getRosterStatus(sortedRosters[position].dpc_points, position).toLowerCase()} to the International, which has been postponed due to COVID-19.</Paragraph>
 
-        {(matches?.future.length || 0) > 0 && <p>The team has {matches?.future.length} scheduled matches to try to increase their DotA Pro Circuit points.</p>}
+        {(matches?.future.length || 0) > 0 && <Paragraph>The team has {matches?.future.length} scheduled matches to try to increase their DotA Pro Circuit points.</Paragraph>}
 
-        <SubTitle>Past results</SubTitle>
+        <UnderTitle>Past results</UnderTitle>
         {matches?.past.map(eventId => (
           <Match eventId={eventId} rosterId={rosterId} key={eventId} />
         ))}
-        <SubTitle>Upcoming Matches</SubTitle>
+        <UnderTitle>Upcoming Matches</UnderTitle>
         {
           // Future matches call a Countdown component, each countdown starts a timeout.
           // if we have a heavy load and too many countdowns start at the same time

@@ -7,6 +7,8 @@ export const ScoreboardGrid = styled.main<any>`
   padding: 30px 10px;
   max-width: 800px;
   margin: 0 auto;
+  font-size: 0.7em;
+  font-weight: 100;
 
   /* Title and Header + 12 teams */
   & :nth-child(14) {
@@ -29,6 +31,7 @@ export const ScoreboardGrid = styled.main<any>`
       & img {
         opacity: 1;
         filter: grayscale(0);
+        transition: filter 500ms;
       }
       .teamName {
         text-shadow: 0 0 5px rgba(255,255,255,.6)
@@ -59,7 +62,7 @@ export const ScoreboardGrid = styled.main<any>`
     }
 
     img {
-      max-width: 35px;
+      max-width: 3em;
       padding: 5px;
       filter: grayscale(100);
       opacity: .8;
@@ -71,7 +74,7 @@ export const ScoreboardGrid = styled.main<any>`
     }
   }
   @media (max-width: 540px) {
-    font-size: 14px;
+    font-size: 0.75em;
     .grid-item {
       grid-template-columns: auto 0 1fr 80px 25px 25px 25px 80px;
       gap: 5px;
@@ -102,8 +105,9 @@ export const GridRow = styled.div<IStyledColors & any>`
     if (props.status === 'Qualified') return hex2Rgba(props.theme.colors.warning, 0.7);
     return hex2Rgba(props.theme.colors.loser, 0.7);
   }};
-    transition: box-shadow 400ms;
+    transition: box-shadow 400ms, transform 150ms;
     &:hover {
+      transform: scale(1.05);
       box-shadow: 0 0 10px 1px ${(props) => {
     if (props.status === 'Invited') return hex2Rgba(props.theme.colors.winner, 0.6);
     if (props.status === 'Qualified') return hex2Rgba(props.theme.colors.warning, 0.6);
@@ -112,7 +116,7 @@ export const GridRow = styled.div<IStyledColors & any>`
     if (props.status === 'Invited') return hex2Rgba(props.theme.colors.winner, 1);
     if (props.status === 'Qualified') return hex2Rgba(props.theme.colors.warning, 1);
     return hex2Rgba(props.theme.colors.loser, 1);
-  }}
+  }};
   }
 
     & .status {

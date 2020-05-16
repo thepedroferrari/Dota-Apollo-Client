@@ -7,11 +7,12 @@ export const boxShadowMixin = (
   spread: number,
   color: string,
   opacity: number = 1,
-  inset: boolean = false,
+  inset: boolean = false
 ) => {
-  return `${inset ? 'inset' : ''} ${top}px ${left}px ${blur}px ${spread}px ${hex2Rgba(color, opacity)}`;
+  return `${
+    inset ? 'inset' : ''
+  } ${top}px ${left}px ${blur}px ${spread}px ${hex2Rgba(color, opacity)}`;
 };
-
 
 export const textShadowMixin = (
   top: number,

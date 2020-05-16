@@ -1,2 +1,2 @@
-export * from './useMatches';
 export * from './useCountdown';
+export * from './useMatches';

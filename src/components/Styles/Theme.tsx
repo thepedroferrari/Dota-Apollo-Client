@@ -17,16 +17,29 @@ const theme = {
     subtitle: '#FEFEFE',
   },
   textShadows: {
-    title: `${textShadowMixin(0, 0, 20, '#B44335')}, ${textShadowMixin(0, 0, 10, '#B44335')}, ${textShadowMixin(0, 0, 5, '#B44335')}`,
-    subTitle: `${textShadowMixin(0, 0, 16, '#257DAE')}, ${textShadowMixin(0, 0, 8, '#257DAE')}`,
+    title: `
+      ${textShadowMixin(0, 0, 20, '#B44335')},
+      ${textShadowMixin(0, 0, 10, '#B44335')},
+      ${textShadowMixin(0, 0, 5, '#B44335')}`,
+    subTitle: `
+      ${textShadowMixin(0, 0, 16, '#257DAE')},
+      ${textShadowMixin(0, 0, 8, '#257DAE')}`,
+    underTitle: `${textShadowMixin(0, 0, 2, '#ffffff', 0.5)}`,
+    paragraph: `
+      ${textShadowMixin(1, 0, 2, '#1C242D', 0.35)},
+      ${textShadowMixin(-1, 0, 2, '#1C242D', 0.35)},
+      ${textShadowMixin(0, 1, 2, '#1C242D', 0.35)},
+      ${textShadowMixin(0, -1, 2, '#1C242D', 0.35)}`,
   },
   fonts: ["sans-serif", "Roboto", "Cinzel"],
   fontSizes: {
-    small: "1rem",
-    medium: "2rem",
-    large: "3rem",
-    title: `${isSmall ? "2.75rem" : "4rem"}`,
-    subtitle: `${isSmall ? "2rem" : "2.75rem"}`,
+    small: "0.7em",
+    medium: "1em",
+    large: "1.75em",
+    title: `${isSmall ? "1.75em" : "2.5em"}`,
+    subtitle: `${isSmall ? "1.5em" : "1.75em"}`,
+    underTitle: `${isSmall ? "1.75em" : "2.25em"}`,
+    paragraph: `${isSmall ? ".9em" : "1em"}`,
   }
 };
 

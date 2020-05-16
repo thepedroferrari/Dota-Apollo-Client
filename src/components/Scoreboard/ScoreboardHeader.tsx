@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { boxShadowMixin } from '../../utils/styledMixins';
+
 
 const GridHeader = styled.header`
   background: ${props => props.theme.colors.background};
+  box-shadow: ${boxShadowMixin(0, 10, 10, 0, '#000000', 0.75)};
   display: grid;
   grid-template-columns: 1fr 25px 25px 25px 65px;
   margin: 0 30px;
@@ -12,7 +15,6 @@ const GridHeader = styled.header`
   border-radius: 3px;
   position: sticky;
   top: 0;
-  font-weight: bold;
   font-size: 18px;
   z-index: 1;
   & :last-child {

@@ -33,10 +33,10 @@ const Player = ({ playerId }: Props) => {
   const playerRoles = roles && getPlayerRole(roles);
 
   return (
-    <section >
+    <section>
       <header>
         <h1>
-          {displayName}{' '}<img src={country.images.thumbnail} alt="" role="presentation" />
+          {displayName}{' '}<img src={country.images.thumbnail} alt={`${country.name} flag`} role="presentation" />
         </h1>
       </header>
       <img src={images.default} alt={`Player ${nick_name}`} />
