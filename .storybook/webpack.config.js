@@ -9,12 +9,6 @@ module.exports = ({ config, mode }) => {
     },
   });
 
-  config.plugins.push(
-    new webpack.DefinePlugin({
-      SC_DISABLE_SPEEDY: true
-    })
-  );
-
   config.resolve.extensions.push('.ts', '.tsx');
   return config;
 };
