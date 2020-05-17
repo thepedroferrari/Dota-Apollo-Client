@@ -36,10 +36,10 @@ export const TeamGrid = styled.main`
 `;
 
 export const MatchesGrid = styled.section`
-    padding-top: 15vh;
-    grid-area: matches;
+  padding-top: 15vh;
+  grid-area: matches;
 `;
 
 export const PlayersGrid = styled.section`
-    grid-area: players;
+  grid-area: players;
 `;

@@ -14,7 +14,7 @@ function Scoreboard() {
   if (loading) return <h1>Loading</h1>;
   if (error) return <h1>Error</h1>;
 
-  const { rosters }: { rosters: IRoster[]; } = data;
+  const { rosters }: { rosters: IRoster[] } = data;
   const sortedRosters = sortNumbersBy('dpc_points', rosters, 'dsc');
   if (typeof sortedRosters === 'undefined') return null;
 

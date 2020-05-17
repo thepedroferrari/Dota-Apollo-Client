@@ -4,7 +4,7 @@ import {
   ApolloClient,
   ApolloProvider,
   HttpLink,
-  InMemoryCache
+  InMemoryCache,
 } from '@apollo/client';
 
 import App from './App';
@@ -12,13 +12,14 @@ import Theme from './components/Styles/Theme';
 import GlobalStyles from './components/Styles/GlobalStyles';
 import { ResetStyles } from './components/Styles/ResetStyles';
 
-const GRAPHQL_SERVER = process.env.REACT_APP_GRAPHQL_ENDPOINT || 'http://localhost:4001/graphql';
+const GRAPHQL_SERVER =
+  process.env.REACT_APP_GRAPHQL_ENDPOINT || 'http://localhost:4001/graphql';
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
-    uri: GRAPHQL_SERVER
-  })
+    uri: GRAPHQL_SERVER,
+  }),
 });
 
 ReactDOM.render(
@@ -33,4 +34,3 @@ ReactDOM.render(
   </ApolloProvider>,
   document.getElementById('root')
 );
-

@@ -1,5 +1,5 @@
-import React from "react";
-import { ThemeProvider } from "styled-components";
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import { textShadowMixin } from '../../utils/styledMixins';
 import { isSmall } from '../../utils';
 
@@ -33,24 +33,23 @@ const theme = {
       ${textShadowMixin(0, 1, 2, '#1C242D', 0.35)},
       ${textShadowMixin(0, -1, 2, '#1C242D', 0.35)}`,
   },
-  fonts: ["sans-serif", "Roboto", "Cinzel"],
+  fonts: ['sans-serif', 'Roboto', 'Cinzel'],
   fontSizes: {
-    small: "0.7em",
-    medium: "1em",
-    large: "1.75em",
-    title: `${isSmall ? "2.75em" : "3.5em"}`,
-    subtitle: `${isSmall ? "1.85em" : "2.25em"}`,
-    underTitle: `${isSmall ? "1.25em" : "1.5em"}`,
-    paragraph: `${isSmall ? "1.15em" : "1em"}`, // yes that's correct :)
-  }
+    small: '0.7em',
+    medium: '1em',
+    large: '1.75em',
+    title: `${isSmall ? '2.75em' : '3.5em'}`,
+    subtitle: `${isSmall ? '1.85em' : '2.25em'}`,
+    underTitle: `${isSmall ? '1.25em' : '1.5em'}`,
+    paragraph: `${isSmall ? '1.15em' : '1em'}`, // yes that's correct :)
+  },
 };
 
-const Theme = ({ children }: { children: React.ReactNode; }) => (
+const Theme = ({ children }: { children: React.ReactNode }) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
 );
 
 export default Theme;
-
 
 /*
 wiki1

@@ -26,10 +26,9 @@ interface IFutureMatch {
   rosterId: string;
 }
 
-
 const Match = ({ eventId, rosterId, future }: Props) => {
   const { loading, error, data } = useQuery(GET_MATCH_DATA, {
-    variables: { id: Number(eventId) }
+    variables: { id: Number(eventId) },
   });
 
   if (loading) return <h1>Loading</h1>;
@@ -42,8 +41,8 @@ const Match = ({ eventId, rosterId, future }: Props) => {
       {future ? (
         <FutureMatch event={event} rosterId={rosterId} start={event.start} />
       ) : (
-          <PastMatch event={event} rosterId={rosterId} />
-        )}
+        <PastMatch event={event} rosterId={rosterId} />
+      )}
     </section>
   );
 };
@@ -68,7 +67,9 @@ const FutureMatch = ({ start, event, rosterId }: IFutureMatch) => {
   //countdown
   return (
     <FutureMatchGrid>
-      <UnderTitle center><span>{home}</span> VS <span>{enemy}</span></UnderTitle>
+      <UnderTitle center>
+        <span>{home}</span> VS <span>{enemy}</span>
+      </UnderTitle>
       <Countdown date={start} />
     </FutureMatchGrid>
   );

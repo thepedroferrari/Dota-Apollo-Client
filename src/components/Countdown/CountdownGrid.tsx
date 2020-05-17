@@ -4,7 +4,7 @@ export const CountdownGrid = styled.time`
   display: grid;
   grid-template-columns: repeat(4, 80px);
   gap: 30px;
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, 0.5);
   padding: 10px 40px;
   margin: 0 auto 1em auto;
   justify-content: center;
@@ -15,8 +15,8 @@ export const CountdownGrid = styled.time`
     flex-direction: column;
     & .time {
       font-family: 'Cinzel';
-      font-size: 2em;
-      font-weight: bold;
+      font-size: 1.75em;
+      font-weight: 300;
     }
     & .time-frame {
       font-weight: 100;
@@ -30,12 +30,8 @@ export const CountdownGrid = styled.time`
     grid-template-columns: repeat(4, 60px);
 
     & .container {
-      & .time {
-        font-size: 1.75em;
-        font-weight: 300;
-      }
       & .time-frame {
-        font-size: .8em;
+        font-size: 0.8em;
       }
     }
   }

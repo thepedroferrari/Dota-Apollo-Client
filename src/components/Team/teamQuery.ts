@@ -21,7 +21,7 @@ const TEAM_QUERY = gql`
           }
         }
       }
-    	players {
+      players {
         id
       }
     }

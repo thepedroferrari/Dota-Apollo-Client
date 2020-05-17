@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import { GET_ROSTER_DATA } from './rosterQuery';
@@ -21,8 +21,8 @@ function Roster({ position, rosterId, name, logo, dpc }: Props) {
   // https://www.apollographql.com/docs/react/v3.0-beta/data/subscriptions/
   const query = useQuery(GET_ROSTER_DATA, {
     variables: {
-      rosterId: Number(rosterId)
-    }
+      rosterId: Number(rosterId),
+    },
   });
 
   const { loading, error, matches } = useMatches({ query, rosterId });

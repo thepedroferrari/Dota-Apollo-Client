@@ -5,7 +5,7 @@ export const PlayerGrid = styled.section`
   display: grid;
   grid-template-columns: 100px 1fr;
   gap: 20px;
-  background: ${props => props.theme.colors.dotaUi};
+  background: ${(props) => props.theme.colors.dotaUi};
   margin-bottom: 1.5em;
   padding: 10px 0;
   box-shadow: ${boxShadowMixin(0, 5, 10, 2, '#000000', 0.75)};

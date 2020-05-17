@@ -7,15 +7,19 @@ import PlayersButton from './PlayersButton';
 const Menu = () => {
   return (
     <MenuGrid>
-      <BackButton>
-        &laquo;
-      </BackButton>
+      <BackButton>&laquo;</BackButton>
       <HomeButton />
       <PlayersButton />
-      <a className="github" href="https://github.com/thepedroferrari/Dota-Apollo-Client" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a
+        className="github"
+        href="https://github.com/thepedroferrari/Dota-Apollo-Client"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
     </MenuGrid>
   );
 };
 
 export default Menu;
-

@@ -30,8 +30,8 @@ export const PlayersGrid = styled.div`
     bottom: -10px;
     left: 0;
     width: 100%;
-    background: ${props => props.theme.colors.dotaUi};
-    color: ${props => props.theme.colors.textWhite};
+    background: ${(props) => props.theme.colors.dotaUi};
+    color: ${(props) => props.theme.colors.textWhite};
     font-size: 16px;
     text-align: center;
     z-index: 1;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-function BackButton({ children }: { children: React.ReactNode; }) {
+function BackButton({ children }: { children: React.ReactNode }) {
   const history = useHistory();
   const handleClick = () => history.goBack();
 
