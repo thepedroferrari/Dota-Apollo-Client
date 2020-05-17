@@ -16,6 +16,7 @@ const theme = {
     textWhite: '#FFFFFF',
     title: '#FFFFFF',
     subtitle: '#FEFEFE',
+    link: '#908d8b',
   },
   textShadows: {
     title: `
