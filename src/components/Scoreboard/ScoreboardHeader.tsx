@@ -7,7 +7,7 @@ const GridHeader = styled.header`
   background: ${props => props.theme.colors.dotaUi};
   box-shadow: ${boxShadowMixin(0, 10, 10, 0, '#000000', 0.75)};
   display: grid;
-  grid-template-columns: 1fr 25px 25px 25px 65px;
+  grid-template-columns: 1fr 25px 25px 25px 75px;
   margin: 0 30px;
   color: #fff;
   gap: 10px;
@@ -15,7 +15,7 @@ const GridHeader = styled.header`
   border-radius: 3px;
   position: sticky;
   top: 0;
-  font-size: 18px;
+  font-size: 1em;
   z-index: 1;
   & :last-child {
     text-align: right;
@@ -27,8 +27,7 @@ const GridHeader = styled.header`
   }
   @media screen and (max-width: 540px) {
     margin: 0 5px;
-    font-size: 16px;
-    grid-template-columns: 1fr 25px 25px 25px 65px;
+    grid-template-columns: 1fr 25px 25px 25px 40px;
     gap: 5px;
 
     & :last-child {

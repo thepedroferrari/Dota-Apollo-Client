@@ -71,7 +71,7 @@ export const ScoreboardGrid = styled.main<any>`
   @media (max-width: 540px) {
     font-size: 0.75em;
     .grid-item {
-      grid-template-columns: auto 0 1fr 80px 25px 25px 25px 80px;
+      grid-template-columns: auto 0 1fr 80px 25px 25px 25px 50px;
       gap: 5px;
       margin: 10px;
       height: 48px;
@@ -100,7 +100,7 @@ export const GridRow = styled.div<IStyledColors & any>`
     if (props.status === 'Qualified') return hex2Rgba(props.theme.colors.warning, 0.7);
     return hex2Rgba(props.theme.colors.loser, 0.7);
   }};
-    transition: box-shadow 400ms, transform 150ms;
+    transition: box-shadow 400ms, transform 200ms;
     &:hover {
       transform: scale(1.05);
       box-shadow: 0 0 10px 1px ${(props) => {

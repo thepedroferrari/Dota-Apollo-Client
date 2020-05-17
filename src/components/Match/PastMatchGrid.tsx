@@ -9,7 +9,8 @@ export const PastMatchGrid = styled.div`
   padding: 20px;
   max-width: 750px;
   font-size: 1em;
-  margin-bottom: 1em;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(255,255,255,.25);
 
   & :first-child {
     text-align: right;

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const TeamGrid = styled.main`
   display: grid;
   grid-template-areas:
-    'title title'
     'logo logo'
+    'title title'
     'rank points'
     'matches matches'
     'players players';
@@ -18,6 +18,8 @@ export const TeamGrid = styled.main`
   .title {
     grid-area: title;
     margin-bottom: 0;
+    line-height: 1;
+    font-weight: bold;
   }
   .rank {
     grid-area: rank;
@@ -29,11 +31,12 @@ export const TeamGrid = styled.main`
   .logo {
     grid-area: logo;
     margin: 0 auto;
-    max-width: 96px;
+    padding-top: 15vh;
   }
 `;
 
 export const MatchesGrid = styled.section`
+    padding-top: 15vh;
     grid-area: matches;
 `;
 
