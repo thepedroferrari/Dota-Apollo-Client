@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Team PSG.LGD 1`] = `
+<h1>
+  Loading
+</h1>
+`;
+
+exports[`Storyshots Team The Alliance 1`] = `
+<h1>
+  Loading
+</h1>
+`;
+
+exports[`Storyshots Team TnC Predator 1`] = `
+<h1>
+  Loading
+</h1>
+`;
+
+exports[`Storyshots Team Virtus.pro 1`] = `
+<h1>
+  Loading
+</h1>
+`;

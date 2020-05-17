@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Social Media Accounts 9pasha 1`] = `
+<address>
+  <a
+    href="https://twitter.com/9pashka"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Twitter
+  </a>
+  <a
+    href="https://www.twitch.tv/9pasha"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Twitch
+  </a>
+</address>
+`;
+
+exports[`Storyshots Social Media Accounts Miracle 1`] = `
+<address>
+  <a
+    href="https://twitter.com/Liquid_Miracle"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Twitter
+  </a>
+  <a
+    href="https://www.facebook.com/MiracleDotaOfficial"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Facebook
+  </a>
+  <a
+    href="https://www.twitch.tv/miracle_doto"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Twitch
+  </a>
+</address>
+`;
+
+exports[`Storyshots Social Media Accounts zai 1`] = `
+<address>
+  <a
+    href="https://twitter.com/zai_2002"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Twitter
+  </a>
+  <a
+    href="https://www.twitch.tv/zai"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Twitch
+  </a>
+</address>
+`;

@@ -1,0 +1,316 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Countdown In 1 Week 1`] = `
+<time
+  className="sc-AxjAm BbpHi"
+>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      6
+    </span>
+    <span
+      className="time-frame"
+    >
+      Days
+    </span>
+  </span>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      23
+    </span>
+    <span
+      className="time-frame"
+    >
+      Hours
+    </span>
+  </span>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      59
+    </span>
+    <span
+      className="time-frame"
+    >
+      Minutes
+    </span>
+  </span>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      59
+    </span>
+    <span
+      className="time-frame"
+    >
+      Seconds
+    </span>
+  </span>
+</time>
+`;
+
+exports[`Storyshots Countdown In 5 Minutes 1`] = `
+<time
+  className="sc-AxjAm BbpHi"
+>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      0
+    </span>
+    <span
+      className="time-frame"
+    >
+      Days
+    </span>
+  </span>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      0
+    </span>
+    <span
+      className="time-frame"
+    >
+      Hours
+    </span>
+  </span>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      4
+    </span>
+    <span
+      className="time-frame"
+    >
+      Minutes
+    </span>
+  </span>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      59
+    </span>
+    <span
+      className="time-frame"
+    >
+      Seconds
+    </span>
+  </span>
+</time>
+`;
+
+exports[`Storyshots Countdown My Birthday in 2020 1`] = `
+<time
+  className="sc-AxjAm BbpHi"
+>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      227
+    </span>
+    <span
+      className="time-frame"
+    >
+      Days
+    </span>
+  </span>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      3
+    </span>
+    <span
+      className="time-frame"
+    >
+      Hours
+    </span>
+  </span>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      2
+    </span>
+    <span
+      className="time-frame"
+    >
+      Minutes
+    </span>
+  </span>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      47
+    </span>
+    <span
+      className="time-frame"
+    >
+      Seconds
+    </span>
+  </span>
+</time>
+`;
+
+exports[`Storyshots Countdown My Birthday in 2021 1`] = `
+<time
+  className="sc-AxjAm BbpHi"
+>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      592
+    </span>
+    <span
+      className="time-frame"
+    >
+      Days
+    </span>
+  </span>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      3
+    </span>
+    <span
+      className="time-frame"
+    >
+      Hours
+    </span>
+  </span>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      2
+    </span>
+    <span
+      className="time-frame"
+    >
+      Minutes
+    </span>
+  </span>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      47
+    </span>
+    <span
+      className="time-frame"
+    >
+      Seconds
+    </span>
+  </span>
+</time>
+`;
+
+exports[`Storyshots Countdown Tomorrow 1`] = `
+<time
+  className="sc-AxjAm BbpHi"
+>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      0
+    </span>
+    <span
+      className="time-frame"
+    >
+      Days
+    </span>
+  </span>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      23
+    </span>
+    <span
+      className="time-frame"
+    >
+      Hours
+    </span>
+  </span>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      59
+    </span>
+    <span
+      className="time-frame"
+    >
+      Minutes
+    </span>
+  </span>
+  <span
+    className="container"
+  >
+    <span
+      className="time"
+    >
+      59
+    </span>
+    <span
+      className="time-frame"
+    >
+      Seconds
+    </span>
+  </span>
+</time>
+`;

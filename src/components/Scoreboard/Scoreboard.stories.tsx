@@ -1,12 +1,12 @@
 import React from "react";
 import { storiesOf, addDecorator } from "@storybook/react";
 
-import Players from './Players';
+import Scoreboard from './Scoreboard';
 import StoriesProvider from '../StoriesProvider/StoriesProvider';
 
 addDecorator(storyFn => <StoriesProvider>{storyFn()}</StoriesProvider>);
 
-storiesOf('Players', module)
-  .add('All Players',
-    () => <Players />
+storiesOf('Scoreboard', module)
+  .add('Scoreboard',
+    () => <Scoreboard />
   );

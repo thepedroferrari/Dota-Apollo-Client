@@ -2,8 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import background from '../../assets/images/bg-06.jpg';
 
 const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Open+Sans:wght@300&display=swap');
-
   :root {
     @media (max-width: 540px) {
       font-size: calc(2vw + 1vh + 1vmin);

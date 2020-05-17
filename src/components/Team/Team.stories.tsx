@@ -2,13 +2,15 @@ import React from "react";
 import { createMemoryHistory, createLocation } from 'history';
 import { match } from 'react-router';
 
-import { storiesOf } from "@storybook/react";
+import { storiesOf, addDecorator } from "@storybook/react";
 
 import Team from './Team';
 import StoriesProvider from '../StoriesProvider/StoriesProvider';
 
 const history = createMemoryHistory();
 const path = `/team/:rosterId`;
+
+addDecorator(storyFn => <StoriesProvider>{storyFn()}</StoriesProvider>);
 
 storiesOf('Team', module)
   .add('Virtus.pro',
@@ -22,9 +24,7 @@ storiesOf('Team', module)
 
       const location = createLocation(matchRoute.url);
       return (
-        <StoriesProvider>
-          <Team history={history} location={location} match={matchRoute} />
-        </StoriesProvider>
+        <Team history={history} location={location} match={matchRoute} />
       );
     }
   )
@@ -39,9 +39,7 @@ storiesOf('Team', module)
 
       const location = createLocation(matchRoute.url);
       return (
-        <StoriesProvider>
-          <Team history={history} location={location} match={matchRoute} />
-        </StoriesProvider>
+        <Team history={history} location={location} match={matchRoute} />
       );
     }
   )
@@ -56,9 +54,7 @@ storiesOf('Team', module)
 
       const location = createLocation(matchRoute.url);
       return (
-        <StoriesProvider>
-          <Team history={history} location={location} match={matchRoute} />
-        </StoriesProvider>
+        <Team history={history} location={location} match={matchRoute} />
       );
     }
   )
@@ -73,9 +69,7 @@ storiesOf('Team', module)
 
       const location = createLocation(matchRoute.url);
       return (
-        <StoriesProvider>
-          <Team history={history} location={location} match={matchRoute} />
-        </StoriesProvider>
+        <Team history={history} location={location} match={matchRoute} />
       );
     }
   );
