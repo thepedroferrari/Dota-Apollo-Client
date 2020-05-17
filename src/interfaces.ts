@@ -168,6 +168,15 @@ export interface ITeamMatches {
 export type TQualified = 'Invited' | 'Qualified' | 'Out';
 export type TPlayerRoleName = 'Hard Carry' | 'Mid' | 'Off-lane' | 'Support' | 'Hard Support';
 
+
+export interface IPlayersByRole {
+  'Hard Carry': IPlayer['id'][];
+  'Mid': IPlayer['id'][];
+  'Off-lane': IPlayer['id'][];
+  'Support': IPlayer['id'][];
+  'Hard Support': IPlayer['id'][];
+}
+
 // missing 3 regions
 type CountryRegionShortName = "EA" | "EU" | "NA" | "OCE" | "SA" | "SEA" | "WA";
 

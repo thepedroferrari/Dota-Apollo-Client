@@ -10,9 +10,11 @@ export const MenuGrid = styled.nav`
   border-bottom: 1px solid rgba(255,255,255,.25);
   font-size: .6em;
   letter-spacing: 1px;
+
   & button {
     all: unset;
   }
+
   & a {
     text-decoration: none;
     color: ${props => props.theme.colors.link};
@@ -40,12 +42,14 @@ export const MenuGrid = styled.nav`
       background: ${props => props.theme.colors.dotaUi2};
     }
   }
+
   & .github {
     justify-self: end;
     padding-right: 20px;
   }
+
   @media screen and (max-width: 540px) {
-    font-size: 0.9em;
+    font-size: 0.8em;
     grid-template-columns: 50px 60px 70px 1fr;
   }
 `;

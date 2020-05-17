@@ -9,6 +9,22 @@ const PLAYERS_QUERY = gql`
         thumbnail
         default
       }
+      roles {
+        name
+      }
+      country {
+        images {
+          thumbnail
+        }
+        region {
+          id
+          name
+        }
+      }
+      social_media_accounts {
+        name
+        url
+      }
     }
   }
 `;
