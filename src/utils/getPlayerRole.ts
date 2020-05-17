@@ -1,8 +1,6 @@
 import { IPlayer, TPlayerRoleName } from '../interfaces';
 
-export const getPlayerRole = (
-  roles: IPlayer['roles']
-): TPlayerRoleName[] => {
+export const getPlayerRole = (roles: IPlayer['roles']): TPlayerRoleName[] => {
   const playerRoles: TPlayerRoleName[] = [];
   const currentRole = roles[0]; // may be a string of one or multiple numbers separated by /
   if (!currentRole) return [];

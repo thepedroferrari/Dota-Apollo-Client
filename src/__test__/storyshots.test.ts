@@ -6,9 +6,9 @@ import { act, create } from 'react-test-renderer';
 const wait = () =>
   act(
     () =>
-      new Promise(resolve => {
-        setTimeout(resolve, 1000);
-      }),
+      new Promise((resolve) => {
+        setTimeout(resolve, 10);
+      })
   );
 
 const converter = new Stories2SnapsConverter();

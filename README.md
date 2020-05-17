@@ -12,6 +12,15 @@ In this project I am interacting with an Apollo Server, currently hosted at Hero
 - Clone [the GraphQL Apollo Server](https://github.com/thepedroferrari/Dota-TS-Apollo-GraphQL-Server) and install using either npm or yarn
 - Alternativelly you can also add a .env file with the string `REACT_APP_GRAPHQL_ENDPOINT=http://the-dota-api.herokuapp.com/graphql`
 
+## Tests
+Snapshot tests are initially set-up using Storybook and Storyshots.
+![The initial test results](https://i.ibb.co/d54rjkp/Screenshot-2020-05-17-at-22-02-06.png)
+
+To run the tests you can run `npm run test`.
+
+### Test Disclaimer
+It hasn't been fully setup yet, there are components utilizing real data and making a comparison between Date.now() and a future Event date, therefore these tests may fail in comparison to previous ones. A more complex setup is required as to pass Date.now() as a specific fixed value in order for the components to always render the same and always get correct tests results.
+
 ## Connection to the API
 The goal of using Apollo server and Apollo client is to have an updated source of truth that is easy to access, simple to subscribe via websockets in the event we want to use a live API and has amazing caching tools. This includes very specific cache invalidation and subscription to data; In a real scenario we want to poll intermittently with queries, and make small, incremental changes to large objects.
 We also want these updates to have very low latency, traditional graphql usually takes half a second to respond but with the correct subscription setup we may achieve the same in about 40ms.
