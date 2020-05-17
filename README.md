@@ -1,6 +1,7 @@
 # Dota Pro Circuit Client
 
-In this project I am interacting with an Apollo Server, currently hosted at Heroku (it turns itself off after 10 minutes of inactivity)
+In this project I am interacting with an Apollo Server, currently hosted at Heroku — it turns itself off after 10 minutes of inactivity and it may take up to 30s to start it again on a new request.
+The stack I chose was React CRA, TypeScript, GraphQL with Apollo Client, Styled Components, Jest and Storybook.
 
 ## Quick Links
 - Client: [https://dota.pedroferrari.com/](https://dota.pedroferrari.com/)
