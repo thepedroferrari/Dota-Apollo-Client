@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/client';
 
 import { GET_ROSTER_DATA } from './rosterQuery';
-import { Placement } from '../../../enums';
 import { useMatches } from '../../../hooks';
-import { getRosterStatus } from '../../../utils/getRosterStatus';
+import { getRosterStatus } from '../../../utils';
 import { GridRow } from '../ScoreboardGrid';
 
 interface Props {

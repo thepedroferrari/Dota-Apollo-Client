@@ -6,7 +6,6 @@ import { IEvent } from '../../interfaces';
 import { getRosterTeamNames } from '../../utils/getRosterTeamNames';
 import Countdown from '../Countdown/Countdown';
 import { PastMatchGrid } from './PastMatchGrid';
-import { SubTitle } from '../CommonUi/SubTitle';
 import { UnderTitle } from '../CommonUi/UnderTitle';
 import { FutureMatchGrid } from './FutureMatchGrid';
 

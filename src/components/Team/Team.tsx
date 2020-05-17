@@ -13,11 +13,9 @@ import { sortNumbersBy } from '../../utils/sort';
 import { TeamGrid, MatchesGrid, PlayersGrid } from './TeamGrid';
 import { SubTitle } from '../CommonUi/SubTitle';
 import { getRosterStatus } from '../../utils/getRosterStatus';
-import { UnderTitle } from '../CommonUi/UnderTitle';
 import { Paragraph } from '../CommonUi/Paragraph';
 
 interface TeamParams {
-  id: string;
   rosterId: string;
 }
 

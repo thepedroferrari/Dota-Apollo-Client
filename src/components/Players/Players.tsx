@@ -4,7 +4,6 @@ import { IPlayer } from '../../interfaces';
 import PLAYERS_QUERY from './playersQuery';
 import { getPlayersByRole } from '../../utils/';
 import { getPlayersByRegion } from '../../utils/getPlayersByRegion';
-import { getPlayerRole } from '../../utils/getPlayerRole';
 import { PlayersGrid } from './PlayersGrid';
 
 
@@ -26,7 +25,6 @@ function Players() {
   return (
     <PlayersGrid>
       {players.map(player => {
-        const gridArea = (getPlayerRole(player.roles)[0] || '').replace(/ /g, '').toLowerCase();
         const region = player.country.region.name.replace(/ /g, '_').toLowerCase();
 
         return (

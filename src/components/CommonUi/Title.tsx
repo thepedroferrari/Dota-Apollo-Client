@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { hex2Rgba } from '../../utils/hex2Rgba';
 
 export const Title = styled.h1<any>`
   font-size: ${props => props.theme.fontSizes.title};

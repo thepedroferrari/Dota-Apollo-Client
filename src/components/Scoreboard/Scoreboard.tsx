@@ -2,11 +2,10 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { IRoster } from '../../interfaces';
 import { GET_SCOREBOARD_DATA } from './scoreboardQuery';
-import { sortNumbersBy } from '../../utils/sort';
+import { sortNumbersBy } from '../../utils';
 import Roster from './Roster/Roster';
 import { ScoreboardGrid } from './ScoreboardGrid';
-import { Title } from '../CommonUi/Title';
-import { isSmall } from '../../utils/window';
+import { Title } from '../CommonUi';
 import ScoreboardHeader from './ScoreboardHeader';
 
 function Scoreboard() {

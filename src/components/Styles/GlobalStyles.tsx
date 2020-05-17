@@ -35,6 +35,7 @@ const GlobalStyles = createGlobalStyle`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5;
     font: 1rem/1.6 sans-serif;
@@ -53,6 +54,9 @@ const GlobalStyles = createGlobalStyle`
     content: "We're sorry, the image below is broken :(";
     display: block;
     margin-bottom: 10px;
+    font-size: 10px;
+    color: white;
+    background: black;
   }
 
   img::after {
