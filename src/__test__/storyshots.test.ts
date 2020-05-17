@@ -1,6 +1,3 @@
-// import initStoryshots from '@storybook/addon-storyshots';
-
-// initStoryshots({});
 import initStoryshots, {
   Stories2SnapsConverter,
 } from '@storybook/addon-storyshots';
@@ -10,7 +7,7 @@ const wait = () =>
   act(
     () =>
       new Promise(resolve => {
-        setTimeout(resolve, 10);
+        setTimeout(resolve, 1000);
       }),
   );
 
