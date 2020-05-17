@@ -73,7 +73,7 @@ export const ScoreboardGrid = styled.main<any>`
     .grid-item {
       grid-template-columns: auto 0 1fr 80px 25px 25px 25px 80px;
       gap: 5px;
-      margin: 10px 0px;
+      margin: 10px;
       height: 48px;
 
       img {

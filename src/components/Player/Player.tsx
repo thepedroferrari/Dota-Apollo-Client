@@ -23,8 +23,9 @@ const Player = ({ playerId }: Props) => {
   const { player }: { player: IPlayer; } = data;
   const { first_name, nick_name, last_name, images, social_media_accounts, country, roles } = player as IPlayer;
 
-  const firstRole = new Date(String([roles.length - 1]));
-  const proPlayerSince = new Intl.DateTimeFormat(USER_INTL).format(firstRole);
+  const firstRole = roles[roles.length - 1].from;
+  const firstRoleDate = new Date(firstRole);
+  const proPlayerSince = new Intl.DateTimeFormat(USER_INTL).format(firstRoleDate);
 
   const displayName = first_name && last_name
     ? `${first_name} "${nick_name}" ${last_name}`

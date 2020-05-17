@@ -26,7 +26,7 @@ const GridHeader = styled.header`
     text-indent: 30px;
   }
   @media screen and (max-width: 540px) {
-    margin: 0;
+    margin: 0 5px;
     font-size: 16px;
     grid-template-columns: 1fr 25px 25px 25px 65px;
     gap: 5px;
