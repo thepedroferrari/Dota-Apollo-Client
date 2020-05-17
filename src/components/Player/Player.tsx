@@ -5,6 +5,7 @@ import { ISocialMediaAccount, IPlayer } from '../../interfaces';
 import { USER_INTL } from '../../utils/constants';
 import { getPlayerRole } from '../../utils';
 import SocialMedia from '../SocialMedia/SocialMedia';
+import { PlayerGrid } from './PlayerGrid';
 
 interface Props {
   playerId: IPlayer['id'];
@@ -23,7 +24,9 @@ const Player = ({ playerId }: Props) => {
   const { player }: { player: IPlayer; } = data;
   const { first_name, nick_name, last_name, images, social_media_accounts, country, roles } = player as IPlayer;
 
-  const firstRole = roles[roles.length - 1].from;
+  const firstRole = roles[roles.length - 1]?.from;
+  if (!firstRole) return null;
+
   const firstRoleDate = new Date(firstRole);
   const proPlayerSince = new Intl.DateTimeFormat(USER_INTL).format(firstRoleDate);
 
@@ -34,22 +37,16 @@ const Player = ({ playerId }: Props) => {
   const playerRoles = roles && getPlayerRole(roles);
 
   return (
-    <section>
+    <PlayerGrid>
+      <img src={images.default} alt={`Player ${nick_name}`} className="picture" />
       <header>
-        <h1>
-          {displayName}{' '}<img src={country.images.thumbnail} alt={`${country.name} flag`} role="presentation" />
-        </h1>
+        <h4>
+          {displayName}
+          <img src={country.images.thumbnail} alt={`${country.name} flag`} role="presentation" />
+        </h4>
+        <span>{playerRoles?.map(r => `${r}, `)}since {proPlayerSince}</span>
       </header>
-      <img src={images.default} alt={`Player ${nick_name}`} />
-
-      <div>
-        Pro Player since: {proPlayerSince}
-        <br />
-        Role{playerRoles && playerRoles.length > 1 && 's'}:{playerRoles?.map(r => ` ${r}`)}.
-      </div>
-
-      <SocialMedia accounts={social_media_accounts} />
-    </section>
+    </PlayerGrid>
   );
 };
 

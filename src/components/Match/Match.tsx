@@ -6,6 +6,9 @@ import { IEvent } from '../../interfaces';
 import { getRosterTeamNames } from '../../utils/getRosterTeamNames';
 import Countdown from '../Countdown/Countdown';
 import { PastMatchGrid } from './PastMatchGrid';
+import { SubTitle } from '../CommonUi/SubTitle';
+import { UnderTitle } from '../CommonUi/UnderTitle';
+import { FutureMatchGrid } from './FutureMatchGrid';
 
 interface Props {
   eventId: IEvent['id'];
@@ -20,6 +23,8 @@ interface IPastMatch {
 
 interface IFutureMatch {
   start: number;
+  event: IEvent;
+  rosterId: string;
 }
 
 
@@ -36,7 +41,7 @@ const Match = ({ eventId, rosterId, future }: Props) => {
   return (
     <section>
       {future ? (
-        <FutureMatch start={event.start} />
+        <FutureMatch event={event} rosterId={rosterId} start={event.start} />
       ) : (
           <PastMatch event={event} rosterId={rosterId} />
         )}
@@ -58,13 +63,15 @@ const PastMatch = ({ event, rosterId }: IPastMatch) => {
   );
 };
 
-const FutureMatch = ({ start }: IFutureMatch) => {
+const FutureMatch = ({ start, event, rosterId }: IFutureMatch) => {
+  const { home, enemy } = getRosterTeamNames(event, rosterId);
 
+  //countdown
   return (
-    <div>
-      <p>The match will start in</p>
+    <FutureMatchGrid>
+      <UnderTitle center><span>{home}</span> VS <span>{enemy}</span></UnderTitle>
       <Countdown date={start} />
-    </div>
+    </FutureMatchGrid>
   );
 };
 

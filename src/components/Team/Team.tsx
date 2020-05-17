@@ -60,11 +60,11 @@ const Team = ({ match }: RouteChildrenProps<TeamParams>) => {
 
         {(matches?.future.length || 0) > 0 && <Paragraph>The team has {matches?.future.length} scheduled matches to try to increase their DotA Pro Circuit points.</Paragraph>}
 
-        <UnderTitle>Past results</UnderTitle>
+        <SubTitle center>Past results</SubTitle>
         {matches?.past.map(eventId => (
           <Match eventId={eventId} rosterId={rosterId} key={eventId} />
         ))}
-        <UnderTitle>Upcoming Matches</UnderTitle>
+        <SubTitle center>Upcoming Matches</SubTitle>
         {
           // Future matches call a Countdown component, each countdown starts a timeout.
           // if we have a heavy load and too many countdowns start at the same time

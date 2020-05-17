@@ -11,6 +11,7 @@ export const GET_MATCH_DATA = gql`
         id
         teams {
           name
+          short_name
         }
       }
     }
