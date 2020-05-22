@@ -14,7 +14,7 @@ export const getPlayersByRole = (players: IPlayer[]): IPlayersByRole => {
     if (!roles) return;
 
     // could also do roles[0] and get just the first of them all.
-    roles.forEach((role) => playerRoles[role].push(player.id));
+    roles.forEach((role) => playerRoles[role].push(player));
   });
   return playerRoles;
 };

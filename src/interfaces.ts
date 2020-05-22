@@ -231,7 +231,7 @@ interface ICountryImages {
   thumbnail: string;
 }
 
-interface ICountryRegion {
+export interface ICountryRegion {
   id: CountryRegionId;
   name: CountryRegionName;
   short_name: CountryRegionShortName;
@@ -275,7 +275,7 @@ interface IPlayerRole {
 }
 
 // missing 3 regions
-type CountryRegionName =
+export type CountryRegionName =
   | 'East Asia'
   | 'Europe'
   | 'North America'
@@ -301,11 +301,11 @@ export type TPlayerRoleName =
   | 'Hard Support';
 
 export interface IPlayersByRole {
-  'Hard Carry': IPlayer['id'][];
-  Mid: IPlayer['id'][];
-  'Off-lane': IPlayer['id'][];
-  Support: IPlayer['id'][];
-  'Hard Support': IPlayer['id'][];
+  'Hard Carry': IPlayer[];
+  Mid: IPlayer[];
+  'Off-lane': IPlayer[];
+  Support: IPlayer[];
+  'Hard Support': IPlayer[];
 }
 
 // missing 3 regions
