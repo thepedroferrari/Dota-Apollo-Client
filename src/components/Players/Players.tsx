@@ -36,9 +36,12 @@ function Players() {
   const setSouthEastAsia = () => filterPlayersByRegion('South East Asia');
   const setWesternAsia = () => filterPlayersByRegion('Western Asia');
 
+  const cleanFilter = filter.replace(/ /g, '_').toLowerCase();
+  console.log(cleanFilter);
+
   return (
-    <GameGrid>
-      <PlayersGrid filter={filter}>
+    <GameGrid filter={cleanFilter}>
+      <PlayersGrid filter={cleanFilter}>
         <h2>Hard Carry</h2>
         <div className="role hardCarry">
           {playersByRoles['Hard Carry'].map((player) => (
@@ -104,17 +107,15 @@ function Players() {
           ))
           }
         </div>
-
-
       </PlayersGrid>
       <div className="filter">
-        <button onClick={setEastAsia} >East Asia</button>
-        <button onClick={setEurope}>Europe</button>
-        <button onClick={setNothAmerica} >North America</button>
-        <button onClick={setOceania}>Oceania</button>
-        <button onClick={setSouthAmerica} >South America</button>
-        <button onClick={setSouthEastAsia} >South East Asia</button>
-        <button onClick={setWesternAsia} >Western Asia</button>
+        <button className="east_asia" onClick={setEastAsia} >East Asia</button>
+        <button className="europe" onClick={setEurope}>Europe</button>
+        <button className="north_america" onClick={setNothAmerica} >North America</button>
+        <button className="oceania" onClick={setOceania}>Oceania</button>
+        <button className="south_america" onClick={setSouthAmerica} >South America</button>
+        <button className="south_east_asia" onClick={setSouthEastAsia} >South East Asia</button>
+        <button className="western_asia" onClick={setWesternAsia} >Western Asia</button>
       </div>
     </GameGrid>
   );
