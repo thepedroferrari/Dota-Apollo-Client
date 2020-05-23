@@ -248,6 +248,12 @@ export interface ISocialMediaAccount {
 type SocialMediaAccountName = 'Facebook' | 'Twitch' | 'Twitter';
 type SocialMediaAccountSlug = 'facebook' | 'twitch' | 'twitter';
 
+export interface IExtendedPlayer extends IPlayer {
+  rosterId: number;
+  dpc_points: number;
+  team: ITeam;
+}
+
 export interface IPlayer {
   nick_name: string;
   deleted_at: string | null;
@@ -301,11 +307,11 @@ export type TPlayerRoleName =
   | 'Hard Support';
 
 export interface IPlayersByRole {
-  'Hard Carry': IPlayer[];
-  Mid: IPlayer[];
-  'Off-lane': IPlayer[];
-  Support: IPlayer[];
-  'Hard Support': IPlayer[];
+  'Hard Carry': IExtendedPlayer[];
+  Mid: IExtendedPlayer[];
+  'Off-lane': IExtendedPlayer[];
+  Support: IExtendedPlayer[];
+  'Hard Support': IExtendedPlayer[];
 }
 
 // missing 3 regions

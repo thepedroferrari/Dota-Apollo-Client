@@ -1,7 +1,7 @@
-import { IPlayer, IPlayersByRole } from '../interfaces';
+import { IExtendedPlayer, IPlayersByRole } from '../interfaces';
 import { getPlayerRole } from './getPlayerRole';
 
-export const getPlayersByRole = (players: IPlayer[]): IPlayersByRole => {
+export const getPlayersByRole = (players: IExtendedPlayer[]): IPlayersByRole => {
   const playerRoles: IPlayersByRole = {
     'Hard Carry': [],
     Mid: [],
@@ -16,5 +16,6 @@ export const getPlayersByRole = (players: IPlayer[]): IPlayersByRole => {
     // could also do roles[0] and get just the first of them all.
     roles.forEach((role) => playerRoles[role].push(player));
   });
+
   return playerRoles;
 };

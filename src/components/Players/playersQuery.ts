@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 const PLAYERS_QUERY = gql`
-  query players {
-    players {
+  query extendedPlayers {
+    extendedPlayers {
       id
       nick_name
       images {
@@ -25,6 +25,28 @@ const PLAYERS_QUERY = gql`
         name
         url
       }
+      team {
+        name
+        images {
+          thumbnail
+          default
+        }
+        country {
+          images {
+            thumbnail
+          }
+          region {
+            id
+            name
+          }
+        }
+        social_media_accounts {
+          name
+          url
+        }
+      }
+      rosterId
+      dpc_points
     }
   }
 `;

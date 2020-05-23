@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
-export const PlayersGrid = styled.div`
+export const PlayersGrid = styled.div<any>`
   display: grid;
   grid-template-columns: 40px 1fr;
-  grid-auto-rows: 1fr;
   grid-area: players;
+  max-height: 80vh;
+  overflow-y: scroll;
   h2 {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
@@ -16,9 +17,8 @@ export const PlayersGrid = styled.div`
   }
   & .role {
     display: grid;
-    gap: 20px 10px;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    grid-auto-rows: 1fr;
+    gap: 15px 5px;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     margin-bottom: 20px;
 
       & div {
@@ -45,7 +45,7 @@ export const PlayersGrid = styled.div`
         width: 100%;
         background: ${(props) => props.theme.colors.dotaUi};
         color: ${(props) => props.theme.colors.textWhite};
-        font-size: 16px;
+        font-size: 12px;
         text-align: center;
         z-index: 1;
         white-space: nowrap;
@@ -53,9 +53,20 @@ export const PlayersGrid = styled.div`
         text-overflow: ellipsis;
       }
     }
+
+  }
+  & .role div:not(.${props => props.region.replace(/ /g, '_').toLowerCase()}) {
+    filter: grayscale(100);
+    opacity: .5;
   }
 
   @media screen and (max-width: 540px) {
     font-size: 12px;
   }
+`;
+
+
+const PlayerGrid = styled.div`
+  display: grid;
+
 `;
