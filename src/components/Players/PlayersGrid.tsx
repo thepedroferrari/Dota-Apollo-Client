@@ -55,7 +55,7 @@ export const PlayersGrid = styled.div<any>`
     }
 
   }
-  & .role div:not(.${props => props.region.replace(/ /g, '_').toLowerCase()}) {
+  & .role div:not(.${props => props.filter.replace(/ /g, '_').toLowerCase()}) {
     filter: grayscale(100);
     opacity: .5;
   }

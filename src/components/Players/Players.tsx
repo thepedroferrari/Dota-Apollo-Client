@@ -11,7 +11,7 @@ import { useState } from 'react';
 
 function Players() {
   const { loading, error, data } = useQuery(PLAYERS_QUERY);
-  const [region, setRegion] = useState<CountryRegionName | ''>('');
+  const [filter, setFilter] = useState<CountryRegionName | ''>('');
 
   if (loading) return <h1>Loading</h1>;
   if (error) return <h1>Error</h1>;
@@ -19,13 +19,13 @@ function Players() {
   const { extendedPlayers }: { extendedPlayers: IExtendedPlayer[]; } = data;
   const playersByRoles = getPlayersByRole(extendedPlayers);
 
-  const filterPlayersByRegion = (filter: CountryRegionName) => {
+  const filterPlayersByRegion = (region: CountryRegionName) => {
+    console.log({ filter, region });
     if (filter === region) {
-      setRegion('');
+      setFilter('');
       return null;
     }
-    setRegion(filter);
-    return null;
+    setFilter(region);
   };
 
   const setEastAsia = () => filterPlayersByRegion('East Asia');
@@ -38,8 +38,8 @@ function Players() {
 
   return (
     <GameGrid>
-      <PlayersGrid region={region}>
-        <h2>Hard Carry {region}</h2>
+      <PlayersGrid filter={filter}>
+        <h2>Hard Carry</h2>
         <div className="role hardCarry">
           {playersByRoles['Hard Carry'].map((player) => (
             <PlayerPortrait
