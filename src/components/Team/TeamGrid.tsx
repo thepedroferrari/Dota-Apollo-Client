@@ -9,7 +9,10 @@ export const TeamGrid = styled.main`
     'matches matches'
     'players players';
   gap: 10px;
-  max-width: 1200px;
+
+  width: 1200px;
+  max-width: 100vw;
+  overflow: hidden;
   color: white;
   justify-content: center;
   margin: 0 auto;

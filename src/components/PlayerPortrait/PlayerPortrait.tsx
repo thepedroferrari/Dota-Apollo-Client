@@ -1,33 +1,32 @@
 import React from 'react';
-import { IPlayer, CountryRegionName } from '../../interfaces';
+import { CountryRegionName, IExtendedPlayer } from '../../interfaces';
+import { snakeCase } from '../../utils';
 
 interface Props {
-  regionName: CountryRegionName;
-  nickName: IPlayer['nick_name'];
-  playerImage: string;
-  countryImage: string;
+  player: IExtendedPlayer;
+  setSelectedPlayer: React.Dispatch<React.SetStateAction<IExtendedPlayer | undefined>>;
 }
 
-const PlayerPortrait = ({ countryImage, nickName, playerImage, regionName }: Props) => {
+const PlayerPortrait = ({ player, setSelectedPlayer }: Props) => {
+  const { nick_name, country, images } = player;
+  const cleanRegionName = snakeCase(country.region.name);
 
-
-
-  const cleanRegionName = regionName.replace(/ /g, '_').toLowerCase();
+  const handleClick = () => setSelectedPlayer(player);
 
   return (
-    <div className={cleanRegionName}>
+    <div className={cleanRegionName} onClick={handleClick}>
       <img
         className="picture"
-        src={playerImage}
-        alt={`Player ${nickName}`}
+        src={images.default}
+        alt={`Player ${nick_name}`}
       />
       <img
         className="country"
-        src={countryImage}
+        src={country.images.thumbnail}
         alt=""
         role="presentation"
       />
-      <span>{nickName}</span>
+      <span>{nick_name}</span>
     </div>
   );
 };

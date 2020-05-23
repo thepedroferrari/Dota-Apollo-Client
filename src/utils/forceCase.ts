@@ -1,0 +1,1 @@
+export const snakeCase = (string: string) => string.replace(/ /g, '_').toLowerCase();

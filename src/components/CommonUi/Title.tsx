@@ -7,4 +7,5 @@ export const Title = styled.h1<any>`
   margin-bottom: 1em;
   letter-spacing: 1vw;
   text-align: ${(props) => (props.center ? 'center' : 'left')};
+  max-width: 100%;
 `;

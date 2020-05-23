@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { IExtendedPlayer, ICountryRegion, CountryRegionName } from '../../interfaces';
-import PLAYERS_QUERY from './playersQuery';
-import { getPlayersByRole } from '../../utils/';
-import { getPlayersByRegion } from '../../utils/getPlayersByRegion';
-import { PlayersGrid } from './PlayersGrid';
-import PlayerPortrait from '../PlayerPortrait/PlayerPortrait';
+
+
+import { IExtendedPlayer, CountryRegionName } from '../../interfaces';
+import { getPlayersByRole, snakeCase } from '../../utils/';
+import PlayerPortrait from '../PlayerPortrait';
+import PlayerCard from '../PlayerCard';
 import { GameGrid } from './GameGrid';
-import { useState } from 'react';
+import PLAYERS_QUERY from './playersQuery';
+import { PlayersGrid } from './PlayersGrid';
 
 function Players() {
   const { loading, error, data } = useQuery(PLAYERS_QUERY);
   const [filter, setFilter] = useState<CountryRegionName | ''>('');
+  const [selectedPlayer, setSelectedPlayer] = useState<IExtendedPlayer | undefined>(undefined);
 
   if (loading) return <h1>Loading</h1>;
   if (error) return <h1>Error</h1>;
@@ -20,7 +22,6 @@ function Players() {
   const playersByRoles = getPlayersByRole(extendedPlayers);
 
   const filterPlayersByRegion = (region: CountryRegionName) => {
-    console.log({ filter, region });
     if (filter === region) {
       setFilter('');
       return null;
@@ -36,7 +37,7 @@ function Players() {
   const setSouthEastAsia = () => filterPlayersByRegion('South East Asia');
   const setWesternAsia = () => filterPlayersByRegion('Western Asia');
 
-  const cleanFilter = filter.replace(/ /g, '_').toLowerCase();
+  const cleanFilter = snakeCase(filter);
   console.log(cleanFilter);
 
   return (
@@ -47,10 +48,8 @@ function Players() {
           {playersByRoles['Hard Carry'].map((player) => (
             <PlayerPortrait
               key={`hc-${player.id}`}
-              nickName={player.nick_name}
-              regionName={player.country.region.name}
-              playerImage={player.images.default}
-              countryImage={player.country.images.thumbnail}
+              player={player}
+              setSelectedPlayer={setSelectedPlayer}
             />
           ))
           }
@@ -60,10 +59,8 @@ function Players() {
           {playersByRoles.Mid.map((player) => (
             <PlayerPortrait
               key={`mid-${player.id}`}
-              nickName={player.nick_name}
-              regionName={player.country.region.name}
-              playerImage={player.images.default}
-              countryImage={player.country.images.thumbnail}
+              player={player}
+              setSelectedPlayer={setSelectedPlayer}
             />
           ))
           }
@@ -73,10 +70,8 @@ function Players() {
           {playersByRoles['Off-lane'].map((player) => (
             <PlayerPortrait
               key={`off-${player.id}`}
-              nickName={player.nick_name}
-              regionName={player.country.region.name}
-              playerImage={player.images.default}
-              countryImage={player.country.images.thumbnail}
+              player={player}
+              setSelectedPlayer={setSelectedPlayer}
             />
           ))
           }
@@ -86,10 +81,8 @@ function Players() {
           {playersByRoles.Support.map((player) => (
             <PlayerPortrait
               key={`sup-${player.id}`}
-              nickName={player.nick_name}
-              regionName={player.country.region.name}
-              playerImage={player.images.default}
-              countryImage={player.country.images.thumbnail}
+              player={player}
+              setSelectedPlayer={setSelectedPlayer}
             />
           ))
           }
@@ -99,10 +92,8 @@ function Players() {
           {playersByRoles['Hard Support'].map((player) => (
             <PlayerPortrait
               key={`hsup-${player.id}`}
-              nickName={player.nick_name}
-              regionName={player.country.region.name}
-              playerImage={player.images.default}
-              countryImage={player.country.images.thumbnail}
+              player={player}
+              setSelectedPlayer={setSelectedPlayer}
             />
           ))
           }
@@ -117,6 +108,10 @@ function Players() {
         <button className="south_east_asia" onClick={setSouthEastAsia} >South East Asia</button>
         <button className="western_asia" onClick={setWesternAsia} >Western Asia</button>
       </div>
+
+      <PlayerCard
+        player={selectedPlayer}
+      />
     </GameGrid>
   );
 }

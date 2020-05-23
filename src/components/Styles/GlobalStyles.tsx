@@ -35,8 +35,10 @@ const GlobalStyles = createGlobalStyle`
     background-size: cover;
     color: white;
     font-family: 'Open Sans', sans-serif;
+    height: 100vh;
     line-height: 1.5;
     font: 1rem/1.6 sans-serif;
+    max-width: 100vw;
   }
 
   img {

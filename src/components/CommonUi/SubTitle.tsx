@@ -8,4 +8,5 @@ export const SubTitle = styled.h2<any>`
   letter-spacing: 2px;
   text-align: ${(props) => (props.center ? 'center' : 'left')};
   text-transform: uppercase;
+  max-width: 100vw;
 `;

@@ -3,10 +3,11 @@ import { boxShadowMixin, textShadowMixin } from '../../utils';
 
 export const PlayerGrid = styled.section`
   display: grid;
+  max-width: 95vw;
+  margin: 0 auto 1.5em auto;
   grid-template-columns: 100px 1fr;
   gap: 20px;
   background: ${(props) => props.theme.colors.dotaUi};
-  margin-bottom: 1.5em;
   padding: 10px 0;
   box-shadow: ${boxShadowMixin(0, 5, 10, 2, '#000000', 0.75)};
   & .picture {
@@ -23,7 +24,8 @@ export const PlayerGrid = styled.section`
     }
     h4 {
       font-family: 'Cinzel';
-      font-size: 1.5em;
+      font-size: 1.1em;
+      word-break: break-all;
       text-shadow: ${textShadowMixin(0, 0, 5, '#FFFFFF', 0.5)};
       line-height: 1.25;
     }
