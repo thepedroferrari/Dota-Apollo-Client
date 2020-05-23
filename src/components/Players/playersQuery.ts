@@ -5,6 +5,8 @@ const PLAYERS_QUERY = gql`
     extendedPlayers {
       id
       nick_name
+      first_name
+      last_name
       images {
         thumbnail
         default
@@ -13,11 +15,11 @@ const PLAYERS_QUERY = gql`
         name
       }
       country {
+        name
         images {
           thumbnail
         }
         region {
-          id
           name
         }
       }
@@ -29,20 +31,6 @@ const PLAYERS_QUERY = gql`
         name
         images {
           thumbnail
-          default
-        }
-        country {
-          images {
-            thumbnail
-          }
-          region {
-            id
-            name
-          }
-        }
-        social_media_accounts {
-          name
-          url
         }
       }
       rosterId

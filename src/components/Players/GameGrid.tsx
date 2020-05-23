@@ -4,9 +4,10 @@ export const GameGrid = styled.main<any>`
   padding: 25px;
   display: grid;
   grid-template-areas:
-    'pick1   pick1   vs      pick2   pick2'
-    'players players players players player'
-    'filter  filter  filter  filter  nah';
+    'pick pick pick '
+    'players players  player'
+    'filter  filter  filter ';
+  grid-template-columns: 1fr 1fr 375px;
 
   & .filter {
     grid-area: filter;
