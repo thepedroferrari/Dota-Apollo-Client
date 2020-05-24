@@ -22,7 +22,7 @@ const PlayerCard = ({ player }: Props) => {
         <p><strong>Name</strong>: {player.first_name} {player.last_name}</p>
         <p><strong>Country</strong>: {player.country.name}</p>
         <p><strong>Region</strong>: {player.country.region.name}</p>
-        <p><strong>Role</strong>: {`${playerRoles[0]}${playerRoles[1] && ` / ${playerRoles[1]}`}`}</p>
+        <p><strong>Role</strong>: {`${playerRoles[0]}${playerRoles[1] ? ` / ${playerRoles[1]}` : ''}`}</p>
         <p><strong>Social</strong>: <SocialMedia accounts={player.social_media_accounts} /></p>
         <p><strong>Team</strong>: {player.team.name}</p>
         <p><strong>DPC Points</strong>: {player.dpc_points}</p>

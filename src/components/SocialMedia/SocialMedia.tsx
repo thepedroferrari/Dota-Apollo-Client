@@ -1,8 +1,9 @@
 import React from 'react';
 import { ISocialMediaAccount } from '../../interfaces';
+import { Address } from './SocialMediaStyles';
 
-const SocialMedia = ({ accounts }: { accounts: ISocialMediaAccount[] }) => (
-  <address>
+const SocialMedia = ({ accounts }: { accounts: ISocialMediaAccount[]; }) => (
+  <Address>
     {accounts.map((account) => (
       <a
         key={account.name}
@@ -13,6 +14,6 @@ const SocialMedia = ({ accounts }: { accounts: ISocialMediaAccount[] }) => (
         {account.name}
       </a>
     ))}
-  </address>
+  </Address>
 );
 export default SocialMedia;
